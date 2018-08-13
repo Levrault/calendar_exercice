@@ -1,6 +1,7 @@
 import React from 'react';
-import Link from '../Link/Link';
 import styles from './Navbar.css';
+import YearFormConnected from '../YearBoxForm/YearFormConnected';
+import Total from '../Total/Total';
 
 /**
  * Main navigation component
@@ -10,10 +11,17 @@ const Navbar = () => (
   <header className={styles.navbar}>
     <ul className={styles.list}>
       <li className={styles.item}>
-        <Link to="/">Home</Link>
+        Calendar App exercice
       </li>
       <li className={styles.item}>
-        <Link to="/about">About</Link>
+        <ul className={styles.sublist}>
+          <li className={styles.item}>
+            <YearFormConnected />
+          </li>
+          <li className={styles.item}>
+            <Total value={0} />
+          </li>
+        </ul>
       </li>
     </ul>
   </header>

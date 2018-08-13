@@ -1,13 +1,14 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import About from '../About/About';
-import Home from '../Home/Home';
+import Calendar from '../Calendar/Calendar';
+import Main from '../Main/Main';
 
 const appRoutes = [
   {
     path: '/',
     exact: true,
-    component: Home
+    component: Calendar
   },
   {
     path: '/about',
@@ -21,7 +22,7 @@ const appRoutes = [
  * @returns {node}
  */
 const NavbarRouter = () => (
-  <main>
+  <Main>
     <Switch>
       {
         appRoutes.map(({ path, exact, component }) => (
@@ -30,7 +31,7 @@ const NavbarRouter = () => (
       }
       <Redirect from="*" to="/" />
     </Switch>
-  </main>
+  </Main>
 );
 
 export default NavbarRouter;

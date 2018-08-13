@@ -7,18 +7,24 @@
   border-bottom: 1px solid #f1f1f1;
   display: flex;
   flex: 1;
+  justify-content: space-between;
+  margin: 0;
+  padding: $space-m $space-l;
+  -list-style: none;
+}
+
+.sublist {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
   -list-style: none;
 }
 
-.container {
-  max-width: 1186px;
-}
-
 .item {
   align-items: center;
   display: flex;
-  padding: 24px;
-  text-transform: capitalize;
+  margin-right: $space-m;
 }
