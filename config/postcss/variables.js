@@ -8,9 +8,9 @@ const palette = {
   'palette-primary': '#3F51B5',
   'palette-text-or-icon': '#fff',
   'palette-accent': '#7C4DFF',
+  'palette-title': '#757575',
   'palette-primary-text': '#212121',
-  'palette-secondary-text': '#9E9E9E',
-  'palette-divider': '#757575'
+  'palette-secondary-text': '#9E9E9E'
 };
 
 // spaces

@@ -1,0 +1,32 @@
+.container {
+  flex: 1;
+  font-size: .7rem;
+  margin: $space-l;
+}
+
+.name {
+  color: $palette-title;
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: $space-s;
+  margin-left: resolve($space-m + $space-s);
+}
+
+.week {
+  @mixin horizontalList;
+  justify-content: space-between;
+
+  &:first-child {
+    justify-content: flex-end;
+  }
+
+  &:last-child {
+    justify-content: flex-start;
+  }
+}
+
+.day {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}

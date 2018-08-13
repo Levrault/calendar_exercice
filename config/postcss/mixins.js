@@ -21,12 +21,13 @@ const globalMixins = {
     };
   },
   /* Center element */
-  verticalCenter: {
+  horizontalList: {
     'align-items': 'center',
     'display': 'flex',
-    'height': '100%',
-    'justify-content': 'center',
-    'width': '100%'
+    'flex': '1',
+    'margin': '0',
+    'padding': '0',
+    'list-style': 'none'
   }
 };
 module.exports = globalMixins;

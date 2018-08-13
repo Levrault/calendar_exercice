@@ -1,11 +1,99 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Month from './Month';
+import styles from './Calendar.css';
 
-const Calendar = () => {
-  return (
-    <div>
-      Calendar
-    </div>
-  );
-};
+const months = [
+  {
+    name: 'January',
+    numberOfDays: 31,
+    firstDayOfMonth: 2
+  },
+  {
+    name: 'February',
+    numberOfDays: 28,
+    firstDayOfMonth: 6
+  },
+  {
+    name: 'March',
+    numberOfDays: 31,
+    firstDayOfMonth: 1
+  },
+  {
+    name: 'April',
+    numberOfDays: 30,
+    firstDayOfMonth: 2
+  },
+  {
+    name: 'May',
+    numberOfDays: 31,
+    firstDayOfMonth: 5
+  },
+  {
+    name: 'June',
+    numberOfDays: 30,
+    firstDayOfMonth: 5
+  },
+  {
+    name: 'July',
+    numberOfDays: 31,
+    firstDayOfMonth: 5
+  },
+  {
+    name: 'August',
+    numberOfDays: 31,
+    firstDayOfMonth: 5
+  },
+  {
+    name: 'September',
+    numberOfDays: 30,
+    firstDayOfMonth: 5
+  },
+  {
+    name: 'October',
+    numberOfDays: 31,
+    firstDayOfMonth: 5
+  },
+  {
+    name: 'November',
+    numberOfDays: 30,
+    firstDayOfMonth: 5
+  },
+  {
+    name: 'December',
+    numberOfDays: 31,
+    firstDayOfMonth: 5
+  }
+];
+
+class Calendar extends Component {
+  /**
+  * @contructor
+  * @param {object} props
+  */
+  constructor (props) {
+    super(props);
+    this.state = {};
+  }
+
+
+  /**
+  * Render
+  */
+  render () {
+    return (
+      <div className={styles.calendar}>
+        {
+          months.map(month => (
+            <Month key={month.name} {...month} />
+          ))
+        }
+      </div>
+    );
+  }
+}
+
+Calendar.propTypes = {};
+
+Calendar.defaultProps = {};
 
 export default Calendar;
