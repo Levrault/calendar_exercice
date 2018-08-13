@@ -1,0 +1,7 @@
+node_modules
+coverage
+public/supervision
+src/lib/newrelicAws
+dist/*
+tests/gatling
+tests/wiremock/scripts

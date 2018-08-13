@@ -1,0 +1,50 @@
+.link {
+  background: none;
+  color: $palette-primary-text;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: $space-xl;
+  z-index: 20;
+
+  &:visited {
+    text-decoration: none;
+  }
+  
+  &:link {
+    text-decoration: none;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+
+  &::after {
+    background: $palette-accent;
+    bottom: -24px;
+    content: '';
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    right: 50%;
+    transition: all ease .5s;
+  } 
+
+  &:hover {
+    color: $palette-accent;
+
+    &::after {
+      height: $space-xs;
+      left: 0;
+      right: 0;
+    }
+  } 
+
+  &::before {
+    font-size: 8px;
+    left: -10px;
+    opacity: .3;
+    position: absolute;
+    transform: translateX(-100%);
+  }
+}
