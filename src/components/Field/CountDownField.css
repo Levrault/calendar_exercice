@@ -1,0 +1,23 @@
+.countdown {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: $palette-secondary-text;
+  margin: 0;
+  outline: 0;
+  padding: 2px 0 0 0;
+}
+
+.input {
+  border: 0;
+  color: $palette-secondary-text;
+  font-size: 1.2rem;
+  text-align: right;
+  width: $space-xl;
+}

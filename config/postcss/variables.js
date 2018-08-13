@@ -4,13 +4,13 @@
 // https://www.materialpalette.com/indigo/deep-purple
 const palette = {
   'palette-dark-primary': '#303F9F',
-  'palette-light-primary': '#C5CAE9',
+  'palette-light-primary': '#EEEEEE',
   'palette-primary': '#3F51B5',
   'palette-text-or-icon': '#fff',
   'palette-accent': '#7C4DFF',
   'palette-primary-text': '#212121',
-  'palette-secondary-text': '#757575',
-  'palette-divider': '#BDBDBD'
+  'palette-secondary-text': '#9E9E9E',
+  'palette-divider': '#757575'
 };
 
 // spaces
