@@ -1,0 +1,18 @@
+.button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 100%;
+  color: $palette-primary-text;
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  height: resolve($space-l + 8px);
+  justify-content: center;
+  transition: background-color .25s;
+  width: $space-l;
+
+  &.active,
+  &:hover {
+    background-color: $palette-light-primary;
+  }
+}
