@@ -16,20 +16,18 @@
   background: transparent;
   border: 0;
   border-bottom: 2px solid $palette-accent;
-  font-size: 1.2rem;
-  margin-bottom: $space-l;
+  margin-bottom: $space-s;
   padding: $space-s;
   transition: all .5s;
   width: $space-xxl;
 
   &:focus {
     outline: 0;
-    width: resolve($space-xxl * 2);
   }
 
   &:focus + .label,
   &:valid + .label {
     color: $palette-secondary-text;
-    transform: translateY(-resolve($space-l));
+    transform: translateY(-resolve($space-m));
   }
 }

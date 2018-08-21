@@ -15,6 +15,7 @@
 .week {
   @mixin horizontalList;
   justify-content: space-between;
+  margin-top: $space-xs;
 
   &:first-child {
     justify-content: flex-end;

@@ -1,0 +1,7 @@
+.button {
+  border: 0;
+  border-radius: 100%;
+  height: resolve($space-m + $space-s);
+  outline: none;
+  width: resolve($space-m + $space-s);
+}

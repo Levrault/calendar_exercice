@@ -1,0 +1,6 @@
+.title {
+  color: $palette-title;
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: $space-s;
+}

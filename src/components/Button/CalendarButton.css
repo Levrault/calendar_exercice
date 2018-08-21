@@ -1,15 +1,14 @@
 .button {
   background-color: transparent;
   border: 0;
-  border-radius: 100%;
+  border-radius: 50%;
   color: $palette-primary-text;
   cursor: pointer;
   display: flex;
-  flex: 1;
-  height: resolve($space-l + 8px);
+  flex: $space-l 0 0;
+  height: $space-l;
   justify-content: center;
   transition: background-color .25s;
-  width: $space-l;
 
   &.active,
   &:hover {

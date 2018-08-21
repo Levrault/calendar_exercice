@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button/Button';
+import CalendarButton from '../Button/CalendarButton';
+import EventFormPopUp from '../Event/EventFormPopUp';
+import styles from './Day.css';
 
 class Day extends Component {
   /**
@@ -30,9 +32,12 @@ class Day extends Component {
     const { selected } = this.state;
     const { value } = this.props;
     return (
-      <Button onClick={this.handleClick} active={selected}>
-        {value}
-      </Button>
+      <div className={styles.day}>
+        <EventFormPopUp active={selected} />
+        <CalendarButton onClick={this.handleClick} active={selected}>
+          {value}
+        </CalendarButton>
+      </div>
     );
   }
 }

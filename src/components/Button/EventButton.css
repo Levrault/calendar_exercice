@@ -1,0 +1,8 @@
+.button {
+  border: 0;
+  color: $palette-secondary-text;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin: $space-s 0;
+}

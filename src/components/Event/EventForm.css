@@ -1,0 +1,15 @@
+.eventForm {
+  min-width: 150px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
