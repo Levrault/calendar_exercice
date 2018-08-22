@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import styles from './Button.css';
+import styles from './CalendarButton.css';
 
 /**
  * Primary button
@@ -9,7 +9,7 @@ import styles from './Button.css';
  * @param {node} children
  * @returns {node}
  */
-const Button = ({ active, children, ...rest }) => {
+const CalendarButton = ({ active, children, ...rest }) => {
   const className = classnames(styles.button, {
     [styles.active]: active
   });
@@ -20,12 +20,12 @@ const Button = ({ active, children, ...rest }) => {
   );
 };
 
-Button.propTypes = {
+CalendarButton.propTypes = {
   active: PropTypes.bool
 };
 
-Button.defaultProps = {
+CalendarButton.defaultProps = {
   active: false
 };
 
-export default Button;
+export default CalendarButton;
