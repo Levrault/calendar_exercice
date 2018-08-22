@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import WeekHeader from './WeekHeader';
-import Day from './Day';
+import DayConnected from './DayConnected';
 import styles from './Month.css';
 
 class Month extends Component {
@@ -58,7 +58,7 @@ class Month extends Component {
   */
   render () {
     const weeks = this.computeWeeks();
-    const { name } = this.props;
+    const { year, monthNumber, name } = this.props;
     return (
       <div className={styles.container}>
         <h1 className={styles.name}>{name}</h1>
@@ -72,7 +72,7 @@ class Month extends Component {
                     if (day === 0) return <li key={`${name}-empty-${index}`} className={styles.day} />;
                     return (
                       <li key={`${name}-day${day}`} className={styles.day}>
-                        <Day value={day} />
+                        <DayConnected value={day} date={`${year}-${monthNumber}-${day}`} />
                       </li>
                     );
                   })
@@ -90,6 +90,8 @@ Month.propTypes = {
   numberOfDays: PropTypes.number.isRequired,
   firstDayOfMonth: PropTypes.number.isRequired,
   currentDay: PropTypes.number,
+  monthNumber: PropTypes.number.isRequired,
+  year: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired
 };
 
