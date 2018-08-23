@@ -1,8 +1,14 @@
 .button {
   border: 0;
   color: $palette-secondary-text;
+  cursor: pointer;
   display: flex;
   flex: 1;
   justify-content: center;
   margin: $space-s 0;
+  outline: none;
+
+  &:hover {
+    color: $palette-primary-text;
+  }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import WeekHeader from './WeekHeader';
-import DayConnected from './DayConnected';
+import WeekHeader from '../Week/WeekHeader';
+import DayConnected from '../Day/DayConnected';
 import styles from './Month.css';
 
 class Month extends Component {
