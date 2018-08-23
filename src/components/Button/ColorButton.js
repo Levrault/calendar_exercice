@@ -1,4 +1,6 @@
 import React from 'react';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
 import styles from './ColorButton.css';
 
 /**
@@ -7,10 +9,23 @@ import styles from './ColorButton.css';
  * @param {node} children
  * @returns {node}
  */
-const ColorButton = ({ children, ...rest }) => (
-  <button {...rest} className={styles.button} >
-    {children}
-  </button>
-);
+const ColorButton = ({ active, children, ...rest }) => {
+  const className = classnames(styles.button, {
+    [styles.active]: active
+  });
+  return (
+    <button {...rest} className={className} >
+      {children}
+    </button>
+  );
+};
+
+ColorButton.propTypes = {
+  active: PropTypes.bool
+};
+
+ColorButton.defaultProps = {
+  active: false
+};
 
 export default ColorButton;

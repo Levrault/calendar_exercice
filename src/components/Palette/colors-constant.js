@@ -29,8 +29,8 @@ export default [
     name: 'green'
   },
   {
-    code: '#FFFF00',
-    name: 'yellow'
+    code: '#CDDC39',
+    name: 'lime'
   }, {
     code: '#795548',
     name: 'brown'
@@ -44,7 +44,7 @@ export default [
     name: 'cyan'
   },
   {
-    code: '#FF6F00',
-    name: 'amber'
+    code: '#EEEEEE',
+    name: 'grey'
   }
 ];
