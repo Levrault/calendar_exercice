@@ -1,5 +1,4 @@
 .container {
-  flex: 1;
   font-size: .7rem;
   margin: $space-l;
 }
