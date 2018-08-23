@@ -8,6 +8,7 @@
   flex: $space-l 0 0;
   height: $space-l;
   justify-content: center;
+  outline: none;
   transition: background-color .25s;
 
   &.active,
