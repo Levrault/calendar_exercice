@@ -14,8 +14,7 @@ class EventForm extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      displayColorField: false,
-      time: '10:00'
+      displayColorField: false
     };
   }
 
@@ -32,8 +31,6 @@ class EventForm extends Component {
     this.props.onCancel();
   }
 
-  handleTimeChange = time => this.setState({ time });
-
   /**
   * Render
   */
@@ -45,10 +42,13 @@ class EventForm extends Component {
     return (
       <div className={styles.container}>
         <form className={styles.eventForm} onSubmit={this.onSubmit}>
+
           <div className={styles.header}>
             <InputField label="Rappel" name="event" component="input" type="text" required />
           </div>
-          {displayColorField && <ColorPalette />}
+
+          <ColorPalette active={displayColorField} />
+
           <div className={styles.buttons}>
             <EventButton type="button" onClick={this.handleCloseClick}>
               <i className="material-icons">clear</i>
@@ -56,10 +56,11 @@ class EventForm extends Component {
             <EventButton type="submit">
               <i className="material-icons">add</i>
             </EventButton>
-            <EventButton type="button" onClick={this.handleColorPaletteClick}>
+            <EventButton type="button" onClick={this.handleColorPaletteClick} active={displayColorField}>
               <i className="material-icons">color_lens</i>
             </EventButton>
           </div>
+
         </form>
       </div>
     );

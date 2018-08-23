@@ -3,5 +3,11 @@
   border-radius: 100%;
   height: resolve($space-m + $space-s);
   outline: none;
+  transition: .5s;
   width: resolve($space-m + $space-s);
+
+  &.active,
+  &:hover {
+    transform: scale(1.2);
+  }
 }
