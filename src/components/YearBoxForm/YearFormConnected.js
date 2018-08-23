@@ -4,7 +4,6 @@ import YearForm from './YearForm';
 
 /**
  * @param {object} state
- * @param {object} ownPropggVs
  * @returns {object}
  */
 const mapStateToProps = (state) => {

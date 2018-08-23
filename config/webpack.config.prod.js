@@ -45,7 +45,7 @@ const cssFilename = 'static/css/[name].[contenthash:8].css';
 // However, our output is structured with css, js and media folders.
 // To have this structure working with relative paths, we have to use custom options.
 const extractTextPluginOptions = shouldUseRelativeAssetPaths ? // Making sure that the publicPath goes back to to build folder.
-{ publicPath: Array(cssFilename.split('/').length).join('../') } :
+  { publicPath: Array(cssFilename.split('/').length).join('../') } :
   {};
 
 // This is the production configuration.
@@ -326,6 +326,12 @@ module.exports = {
       // Don't precache sourcemaps (they're large) and build asset manifest:
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
     }),
+
+    // globals variables
+    new webpack.DefinePlugin({
+      BASE_URL: JSON.stringify('https://demo1346585.mockable.io/')
+    }),
+
     // Moment.js is an extremely popular library that bundles large locale files
     // by default due to how Webpack interprets its code. This is a practical
     // solution that requires the user to opt into importing specific locales.

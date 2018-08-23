@@ -1,5 +1,6 @@
 .navbar {
   background: #fff;
+  height: resolve($space-xl);
 }
 
 .list {

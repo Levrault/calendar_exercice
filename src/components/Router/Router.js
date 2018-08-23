@@ -1,14 +1,14 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import About from '../About/About';
-import Calendar from '../Calendar/Calendar';
+import CalendarConnected from '../Calendar/CalendarConnected';
 import Main from '../Main/Main';
 
 const appRoutes = [
   {
     path: '/',
     exact: true,
-    component: Calendar
+    component: CalendarConnected
   },
   {
     path: '/about',
