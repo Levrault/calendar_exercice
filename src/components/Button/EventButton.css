@@ -1,8 +1,16 @@
 .button {
   border: 0;
   color: $palette-secondary-text;
+  cursor: pointer;
   display: flex;
   flex: 1;
   justify-content: center;
   margin: $space-s 0;
+  outline: none;
+  transition: all .5s;
+
+  &.active,
+  &:hover {
+    color: $palette-primary-text;
+  }
 }

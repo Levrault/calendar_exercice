@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import EventForm from './EventForm';
+import { onSelected } from '../Day/Day-actions';
 
 /**
  * @param {object} state
@@ -10,4 +11,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(EventForm);
+export default connect(mapStateToProps, { onCancel: onSelected })(EventForm);

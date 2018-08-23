@@ -1,16 +1,19 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import CalendarButton from '../Button/CalendarButton';
-import EventFormPopUp from '../Event/EventFormPopUp';
+import EventFormConnected from '../Event/EventFormConnected';
 import styles from './Day.css';
 
+/**
+ * Show a day
+ */
 class Day extends PureComponent {
   /**
-   * active day when clicked
+   * active/inactive day when clicked
    */
-  handleClick = (event) => {
-    const { onSelected, date } = this.props;
-    onSelected(date);
+  handleClick = () => {
+    const { onSelected, date, isSelected } = this.props;
+    onSelected(isSelected ? '' : date);
   }
 
   /**
@@ -20,7 +23,7 @@ class Day extends PureComponent {
     const { value, isSelected } = this.props;
     return (
       <div className={styles.day}>
-        <EventFormPopUp active={isSelected} />
+        <EventFormConnected active={isSelected} />
         <CalendarButton onClick={this.handleClick} active={isSelected}>
           {value}
         </CalendarButton>

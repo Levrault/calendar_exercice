@@ -1,34 +1,22 @@
-@keyframes slideUp {
-  0% {
-    max-height: 0;
-  }
+.colorPalette {
+  @mixin horizontalList;
+  flex-wrap: wrap;
+  margin-bottom: $space-s;
+  max-height: 0;
+  opacity: 0;
+  overflow-y: hidden;
+  transition-duration: 1.5s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 1, .5, 1);
 
-  100% {
+  &.active {
+    height: resolve($space-m * 7);
     max-height: resolve($space-l * 4);
-  }
-}
-
-@keyframes show {
-  0% {
-    display: none;
-    opacity: 0;
-  }
-
-  100% {
-    display: flex;
     opacity: 1;
   }
 }
 
-.colorPalette {
-  @mixin horizontalList;
-  animation: slideUp .25s ease-in-out;
-  flex-wrap: wrap;
-  margin-bottom: $space-s;
-}
-
 .color {
-  animation: show 1.5s;
   display: flex;
   flex-grow: 1;
   justify-content: center;
