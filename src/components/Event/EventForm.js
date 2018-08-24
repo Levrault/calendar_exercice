@@ -77,5 +77,5 @@ EventForm.defaultProps = {
 };
 
 export default reduxForm({
-  form: 'profile'
+  form: 'event'
 })(EventForm);

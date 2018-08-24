@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { reduxForm } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import styles from './YearForm.css';
 import CountDownField from '../Field/CountDownField';
 
@@ -9,19 +9,15 @@ import CountDownField from '../Field/CountDownField';
  */
 class YearForm extends Component {
   /**
-   * onSubmit
-   */
-  onSubmit = (values) => {
-    this.props.handleSubmit(values);
-  }
-
-  /**
   * Render
   */
   render () {
+    const { handleSubmit } = this.props;
     return (
-      <form className={styles.profileForm} onSubmit={this.onSubmit}>
-        <CountDownField name="year" />
+      <form className={styles.profileForm} onSubmit={handleSubmit}>
+        <Field name="year" component={props =>
+          (<CountDownField {...props.input} />)
+        }/>
       </form>
     );
   }
@@ -32,5 +28,8 @@ YearForm.propTypes = {
 };
 
 export default reduxForm({
-  form: 'year'
+  form: 'year',
+  initialValues: {
+    year: 2018
+  }
 })(YearForm);
