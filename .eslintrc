@@ -30,6 +30,7 @@
     "expect": false,
     "assert": false,
     "jest": false,
-    "browser": false
+    "browser": false,
+    "BASE_URL": false
   }
 }
