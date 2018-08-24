@@ -37,7 +37,9 @@ export const calendarFetchError = error => ({
 export const fetch = (params) => async (dispatch) => {
   dispatch(calendarFetchBegin());
   try {
-    const response = await axios.get(`${BASE_URL}/calendar%3Fyear=2018`);
+    const response = await axios.get(`${BASE_URL}/calendar`, {
+      params
+    });
     dispatch(calendarFetchSuccess(response.data.agenda));
   } catch (error) {
     dispatch(calendarFetchError(error));

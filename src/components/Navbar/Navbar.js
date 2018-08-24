@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Navbar.css';
-import YearFormConnected from '../YearBoxForm/YearFormConnected';
+import YearFormConnected from '../YearForm/YearFormConnected';
 import Total from '../Total/Total';
 
 /**

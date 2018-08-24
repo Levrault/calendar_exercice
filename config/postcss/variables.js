@@ -10,7 +10,8 @@ const palette = {
   'palette-accent': '#7C4DFF',
   'palette-title': '#757575',
   'palette-primary-text': '#212121',
-  'palette-secondary-text': '#9E9E9E'
+  'palette-secondary-text': '#9E9E9E',
+  'palette-error': '#F44336'
 };
 
 // spaces
