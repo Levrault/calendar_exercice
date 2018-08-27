@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import WeekHeader from '../Week/WeekHeader';
 import DayConnected from '../Day/DayConnected';
 import styles from './Month.css';
 
-class Month extends Component {
+class Month extends PureComponent {
   /**
   * @contructor
   * @param {object} props

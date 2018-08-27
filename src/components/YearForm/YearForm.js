@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { reduxForm, Field } from 'redux-form';
 import styles from './YearForm.css';
@@ -7,7 +7,7 @@ import CountDownField from '../Field/CountDownField';
 /**
  * Create a profile
  */
-class YearForm extends Component {
+class YearForm extends PureComponent {
   /**
   * Render
   */

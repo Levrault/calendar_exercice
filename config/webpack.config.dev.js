@@ -1,6 +1,5 @@
 'use strict';
 
-const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -155,7 +154,6 @@ module.exports = {
               cacheDirectory: true
             }
           },
-          // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
           // "style" loader turns CSS into JS modules that inject <style> tags.
           // In production, we use a plugin to extract that CSS to a file, but
@@ -179,16 +177,7 @@ module.exports = {
                   // https://github.com/facebookincubator/create-react-app/issues/2677
                   ident: 'postcss',
                   plugins: () => [
-                    ...postCSSConfig, // add custom postcss config
-                    autoprefixer({
-                      browsers: [
-                        '>1%',
-                        'last 4 versions',
-                        'Firefox ESR',
-                        'not ie < 9' // React doesn't support IE8 anyway
-                      ],
-                      flexbox: 'no-2009'
-                    })
+                    ...postCSSConfig // add custom postcss config
                   ]
                 }
               }
@@ -246,7 +235,7 @@ module.exports = {
 
     // globals variables
     new webpack.DefinePlugin({
-      BASE_URL: JSON.stringify('https://demo1346585.mockable.io/')
+      BASE_URL: JSON.stringify('http://localhost:2403/')
     }),
 
     // Moment.js is an extremely popular library that bundles large locale files

@@ -1,34 +1,63 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import ColorButton from '../Button/ColorButton';
-import styles from './ColorPalette.css';
+import ColorRadioButton from '../Button/ColorButton';
 import colors from './colors-constant';
-
+import styles from './ColorPalette.css';
 
 /**
  * Show color palette, change calender selected date's color
- * @param {bool} active
  */
-const ColorPalette = ({ active }) => {
-  const containerClassName = classnames(styles.colorPalette, {
-    [styles.active]: active
-  });
-  return (
-    <ul className={containerClassName}>
-      {
-        colors.map(({ code, name }) => (
-          <li key={name} className={styles.color} >
-            <ColorButton type="button" style={{ backgroundColor: code }} />
-          </li>
-        ))
-      }
-    </ul>
-  );
-};
+class ColorPalette extends PureComponent {
+  constructor (props) {
+    super(props);
+    this.state = {
+      value: colors[colors.length - 1]
+    };
+  }
+
+  /**
+   * @params {string} value
+   * @returns {function}
+   */
+  handleClick = value => event => {
+    this.props.input.onChange(event);
+    this.setState({
+      value
+    });
+  }
+
+  /**
+  * Render
+  */
+  render () {
+    const { active } = this.props;
+    const containerClassName = classnames(styles.colorPalette, {
+      [styles.active]: active
+    });
+    return (
+      <ul className={containerClassName}>
+        {
+          colors.map(({ code, name }) => (
+            <li key={name} className={styles.color} >
+              <ColorRadioButton
+                id={code}
+                code={code}
+                value={code}
+                active={code === this.state.value}
+                onClick={this.handleClick(code)}
+              />
+            </li>
+          ))
+        }
+      </ul>
+    );
+  }
+}
 
 ColorPalette.propTypes = {
-  active: PropTypes.bool
+  active: PropTypes.bool,
+  input: PropTypes.object.isRequired
 };
 
 ColorPalette.defaultProps = {

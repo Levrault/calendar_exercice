@@ -13,6 +13,7 @@
 
   &.active,
   &:hover {
+    @mixin boxShadow 'xs';
     background-color: $palette-light-primary;
   }
 }

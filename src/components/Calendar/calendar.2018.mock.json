@@ -1,0 +1,99 @@
+{
+ "agenda": [{
+    "name": "January",
+    "numberOfDays": 31,
+    "year": 2018,
+    "monthNumber": 1,
+    "firstDayOfMonth": 2,
+    "events": ["2", "15"]
+  },
+  {
+    "name": "February",
+    "numberOfDays": 28,
+    "year": 2018,
+    "monthNumber": 2,
+    "firstDayOfMonth": 6,
+    "events": []
+  },
+  {
+    "name": "March",
+    "numberOfDays": 31,
+    "year": 2018,
+    "monthNumber": 3,
+    "firstDayOfMonth": 1,
+    "events": []
+  },
+  {
+    "name": "April",
+    "numberOfDays": 30,
+    "year": 2018,
+    "monthNumber": 4,
+    "firstDayOfMonth": 2,
+    "events": []
+  },
+  {
+    "name": "May",
+    "numberOfDays": 31,
+    "year": 2018,
+    "monthNumber": 5,
+    "firstDayOfMonth": 5,
+    "events": []
+  },
+  {
+    "name": "June",
+    "numberOfDays": 30,
+    "year": 2018,
+    "monthNumber": 6,
+    "firstDayOfMonth": 5,
+    "events": []
+  },
+  {
+    "name": "July",
+    "numberOfDays": 31,
+    "year": 2018,
+    "monthNumber": 7,
+    "firstDayOfMonth": 5,
+    "events": []
+  },
+  {
+    "name": "August",
+    "numberOfDays": 31,
+    "year": 2018,
+    "monthNumber": 8,
+    "firstDayOfMonth": 5,
+    "events": []
+  },
+  {
+    "name": "September",
+    "numberOfDays": 30,
+    "year": 2018,
+    "monthNumber": 9,
+    "firstDayOfMonth": 5,
+    "events": []
+  },
+  {
+    "name": "October",
+    "numberOfDays": 31,
+    "year": 2018,
+    "monthNumber": 10,
+    "firstDayOfMonth": 5,
+    "events": []
+  },
+  {
+    "name": "November",
+    "numberOfDays": 30,
+    "year": 2018,
+    "monthNumber": 11,
+    "firstDayOfMonth": 5,
+    "events": []
+  },
+  {
+    "name": "December",
+    "numberOfDays": 31,
+    "year": 2018,
+    "monthNumber": 12,
+    "firstDayOfMonth": 5,
+    "events": []
+  }
+]
+}

@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
 import Day from './Day';
 import { onSelected } from './Day-actions';
+import { daySelectedSelector } from './Day-reselect';
 
 /**
- * @param {object} day
- * @param {object} ownProps
+ * @param {object} state
  * @returns {object}
  */
-const mapStateToProps = ({ day }, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
+  const date = daySelectedSelector(state);
   return {
-    isSelected: ownProps.date === day.selected
+    selectedDate: date,
+    isSelected: date === ownProps.date
   };
 };
 

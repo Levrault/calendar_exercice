@@ -1,0 +1,21 @@
+{
+	"type": "Collection",
+	"properties": {
+		"agenda": {
+			"name": "agenda",
+			"type": "array",
+			"typeLabel": "array",
+			"required": true,
+			"id": "agenda",
+			"order": 0
+		},
+		"year": {
+			"name": "year",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "year",
+			"order": 1
+		}
+	}
+}

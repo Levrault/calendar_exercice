@@ -10,7 +10,7 @@
   transition-timing-function: cubic-bezier(0, 1, .5, 1);
 
   &.active {
-    height: resolve($space-m * 7);
+    height: resolve($space-l * 4);
     max-height: resolve($space-l * 4);
     opacity: 1;
   }

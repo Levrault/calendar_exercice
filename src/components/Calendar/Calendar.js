@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Month from '../Month/Month';
 import Loader from '../Loader/Loader';
@@ -6,7 +6,7 @@ import Error from '../Errors/Error';
 import styles from './Calendar.css';
 
 
-class Calendar extends Component {
+class Calendar extends PureComponent {
   /**
   * @contructor
   * @param {object} props
@@ -47,7 +47,9 @@ class Calendar extends Component {
             <Month key={month.name} {...month} />
           ))
         }
-        <Loader active={isLoading} />
+        {isLoading &&
+          <Loader />
+        }
       </div>
     );
   }

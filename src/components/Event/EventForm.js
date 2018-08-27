@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { reduxForm } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import PropTypes from 'prop-types';
 import EventButton from '../Button/EventButton';
-import InputField from '../Field/InputField';
+import ColorInputField from '../Field/ColorInputField';
 import ColorPalette from '../Palette/ColorPalette';
+import colors from '../Palette/colors-constant';
 import styles from './EventForm.css';
 
 class EventForm extends Component {
@@ -32,30 +33,39 @@ class EventForm extends Component {
   }
 
   /**
+   * Submit form
+   */
+  handleSubmit = (event) => {
+    console.log('event', event); //@TODO : to remove
+  }
+
+  /**
   * Render
   */
   render () {
-    if (!this.props.active) return null;
-
     const { displayColorField } = this.state;
+    const { handleSubmit, currentColor } = this.props;
 
     return (
       <div className={styles.container}>
-        <form className={styles.eventForm} onSubmit={this.onSubmit}>
+        <form className={styles.eventForm} onSubmit={handleSubmit(this.handleSubmit)}>
 
           <div className={styles.header}>
-            <InputField label="Rappel" name="event" component="input" type="text" required />
+            <Field name="event" type="text" label="Rappel" code={currentColor} component={ColorInputField} required />
           </div>
 
-          <ColorPalette active={displayColorField} />
+          <Field name="color" type="radio" component={ColorPalette} active={displayColorField} />
 
           <div className={styles.buttons}>
+
             <EventButton type="button" onClick={this.handleCloseClick}>
               <i className="material-icons">clear</i>
             </EventButton>
+
             <EventButton type="submit">
               <i className="material-icons">add</i>
             </EventButton>
+
             <EventButton type="button" onClick={this.handleColorPaletteClick} active={displayColorField}>
               <i className="material-icons">color_lens</i>
             </EventButton>
@@ -68,14 +78,20 @@ class EventForm extends Component {
 }
 
 EventForm.propTypes = {
-  active: PropTypes.bool,
-  onCancel: PropTypes.func.isRequired
+  onCancel: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  currentColor: PropTypes.string.isRequired
 };
 
 EventForm.defaultProps = {
-  active: false
+  currentColor: colors[colors.length - 1].code
 };
 
 export default reduxForm({
-  form: 'event'
+  form: 'event',
+  fields: ['event', 'color'],
+  initialValues: {
+    event: '',
+    color: colors[colors.length - 1].code
+  }
 })(EventForm);

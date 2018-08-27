@@ -1,6 +1,6 @@
+const mixins = require('./postcss/mixins');
+
 var postCSSConfig = [
-/* autoprefix for different browser vendors */
-  require('autoprefixer'),
   /* reset inherited rules */
   require('postcss-initial')({
     reset: 'inherited' // reset only inherited rules
@@ -11,7 +11,7 @@ var postCSSConfig = [
   require('postcss-cssnext'),
   /* enable mixins like Sass/Less */
   require('postcss-mixins')({
-    mixins: require('./postcss/mixins')
+    mixins: mixins
   }),
   /* require global variables */
   require('postcss-simple-vars')({
