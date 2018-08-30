@@ -1,12 +1,12 @@
 {
 	"type": "Collection",
 	"properties": {
-		"agenda": {
-			"name": "agenda",
+		"months": {
+			"name": "months",
 			"type": "array",
 			"typeLabel": "array",
 			"required": true,
-			"id": "agenda",
+			"id": "months",
 			"order": 0
 		},
 		"year": {

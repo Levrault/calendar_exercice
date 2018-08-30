@@ -10,13 +10,13 @@ import styles from './CalendarButton.css';
  * @param {node} children
  * @returns {node}
  */
-const CalendarButton = ({ active, color, children, ...rest }) => {
+const CalendarButton = ({ active, color, children, onClick }) => {
   const className = classnames(styles.button, {
     [styles.active]: active
   });
   const style = active ? { backgroundColor: color } : {};
   return (
-    <button {...rest} className={className} style={style} >
+    <button className={className} style={style} onClick={onClick} >
       {children}
     </button>
   );
@@ -24,13 +24,13 @@ const CalendarButton = ({ active, color, children, ...rest }) => {
 
 CalendarButton.propTypes = {
   active: PropTypes.bool,
-  hasEvent: PropTypes.bool,
-  color: PropTypes.string
+  color: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 CalendarButton.defaultProps = {
   active: false,
-  hasEvent: false
+  onClick: () => {}
 };
 
 export default CalendarButton;
