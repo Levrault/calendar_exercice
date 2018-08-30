@@ -24,3 +24,29 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.colorPalette {
+  @mixin horizontalList;
+  flex-wrap: wrap;
+  margin-bottom: $space-s;
+  max-height: 0;
+  opacity: 0;
+  overflow-y: hidden;
+  transition-duration: 1.5s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 1, .5, 1);
+
+  &.active {
+    height: resolve($space-l * 4);
+    max-height: resolve($space-l * 4);
+    opacity: 1;
+  }
+}
+
+.color {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  margin-top: $space-s;
+  width: 25%;
+}

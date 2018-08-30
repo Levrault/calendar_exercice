@@ -37,10 +37,10 @@ export const calendarFetchError = error => ({
 export const fetch = (params) => async (dispatch) => {
   dispatch(calendarFetchBegin());
   try {
-    const response = await axios.get(`${BASE_URL}/calendar`, {
+    const response = await axios.get(`${BASE_URL}calendar`, {
       params
     });
-    dispatch(calendarFetchSuccess(response.data.agenda));
+    dispatch(calendarFetchSuccess(response.data[0].agenda));
   } catch (error) {
     dispatch(calendarFetchError(error));
   }

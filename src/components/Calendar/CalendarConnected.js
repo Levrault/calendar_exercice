@@ -1,14 +1,19 @@
 import { connect } from 'react-redux';
 import Calendar from './Calendar';
+import {
+  monthsSelector,
+  loadingSelector,
+  errorSelector
+} from './Calendar-reselect';
+import { yearValueSelector } from '../YearForm/YearForm-reselect';
 import { fetch } from './Calendar-actions';
 
-const mapStateToProps = ({ calendar, form: { year } }) => {
-  const { months, loading, error } = calendar;
+const mapStateToProps = (state) => {
   return {
-    months,
-    isLoading: loading,
-    error,
-    currentYear: year.values.year
+    months: monthsSelector(state),
+    isLoading: loadingSelector(state),
+    error: errorSelector(state),
+    currentYear: yearValueSelector(state)
   };
 };
 
