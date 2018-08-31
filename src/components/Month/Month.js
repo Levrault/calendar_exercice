@@ -19,15 +19,15 @@ class Month extends PureComponent {
    * the good week
    */
   computeWeeks = () => {
-    const { numberOfDays, firstDayOfMonth } = this.props;
+    const { numberOfDays, firstDayIndex } = this.props;
     let weeks = [];
     let week = [];
     let day = 1;
-    const length = numberOfDays + firstDayOfMonth;
+    const length = numberOfDays + firstDayIndex;
     for (let index = 1; index < length; index++) {
       // move the first date to math the good day
       // e.g. if begin on wenesday, we will have a decay of 4
-      if (index < firstDayOfMonth) {
+      if (index < firstDayIndex) {
         week.push(0);
       } else {
         week.push(day);
@@ -58,7 +58,7 @@ class Month extends PureComponent {
   */
   render () {
     const weeks = this.computeWeeks();
-    const { year, monthNumber, name } = this.props;
+    const { chronology, name } = this.props;
     return (
       <div className={styles.container}>
         <h1 className={styles.name}>{name}</h1>
@@ -72,7 +72,7 @@ class Month extends PureComponent {
                     if (day === 0) return <li key={`${name}-empty-${index}`} className={styles.day} />;
                     return (
                       <li key={`${name}-day${day}`} className={styles.day}>
-                        <DayConnected value={day} date={`${year}-${monthNumber}-${day}`} />
+                        <DayConnected value={day} date={`${chronology}-${day}`} />
                       </li>
                     );
                   })
@@ -88,10 +88,9 @@ class Month extends PureComponent {
 
 Month.propTypes = {
   numberOfDays: PropTypes.number.isRequired,
-  firstDayOfMonth: PropTypes.number.isRequired,
+  firstDayIndex: PropTypes.number.isRequired,
   currentDay: PropTypes.number,
-  monthNumber: PropTypes.number.isRequired,
-  year: PropTypes.number.isRequired,
+  chronology: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired
 };
 

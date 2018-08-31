@@ -5,46 +5,27 @@ import Loader from '../Loader/Loader';
 import Error from '../Errors/Error';
 import styles from './Calendar.css';
 
-
 class Calendar extends PureComponent {
-  /**
-  * @contructor
-  * @param {object} props
-  */
-  constructor (props) {
-    super(props);
-    this.state = {};
-  }
-
-  componentDidMount () {
-    this.props.fetch({
-      year: this.props.currentYear
-    });
-  }
-
-  componentDidUpdate (prevProps) {
-    if (prevProps.currentYear !== this.props.currentYear) {
-      this.props.fetch({
-        year: this.props.currentYear
-      });
-    }
-  }
-
   /**
   * Render
   */
   render () {
-    const { months, isLoading, error } = this.props;
+    const { months, isLoading, error, year } = this.props;
+    console.log('months', months); //@TODO : to remove
 
     if (error !== null) {
       return <Error {...error} />;
+    }
+
+    if (!months.length) {
+      return null;
     }
 
     return (
       <div className={styles.calendar}>
         {
           months.map(month => (
-            <Month key={month.name} {...month} />
+            <Month key={month.name} {...month} year={year} />
           ))
         }
         {isLoading &&
@@ -56,20 +37,19 @@ class Calendar extends PureComponent {
 }
 
 Calendar.propTypes = {
+  year: PropTypes.number.isRequired,
   months: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     numberOfDays: PropTypes.number.isRequired,
-    year: PropTypes.number.isRequired,
-    monthNumber: PropTypes.number.isRequired,
-    firstDayOfMonth: PropTypes.number.isRequired
+    chronology: PropTypes.number.isRequired,
+    firstDayIndex: PropTypes.number.isRequired
   })),
-  fetch: PropTypes.func.isRequired,
-  currentYear: PropTypes.number.isRequired,
   isLoading: PropTypes.bool,
   error: PropTypes.object
 };
 
 Calendar.defaultProps = {
+  year: 2018,
   months: [],
   isLoading: true
 };

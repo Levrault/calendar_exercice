@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Navbar.css';
-import YearForm from '../YearForm/YearForm';
+import YearFormConnected from '../YearForm/YearFormConnected';
 import Total from '../Total/Total';
 
 /**
@@ -16,7 +16,7 @@ const Navbar = () => (
       <li className={styles.item}>
         <ul className={styles.sublist}>
           <li className={styles.item}>
-            <YearForm />
+            <YearFormConnected />
           </li>
           <li className={styles.item}>
             <Total value={0} />
