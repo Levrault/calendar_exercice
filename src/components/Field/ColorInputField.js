@@ -9,7 +9,7 @@ import styles from './ColorInputField.css';
 const ColorInputField = ({ label, code, ...rest }) => {
   return (
     <div className={styles.container}>
-      <input {...rest.input} className={styles.input} style={{ borderBottom: `2px solid ${code}` }} required />
+      <input {...rest} className={styles.input} style={{ borderBottom: `2px solid ${code}` }} required />
       <label className={styles.label} htmlFor={name}>{label}</label>
     </div>
   );

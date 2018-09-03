@@ -18,6 +18,11 @@ export const currentYearSelector = createSelector(
   calendar => get(calendar, 'current.year', 2018)
 );
 
+export const currentMonthsSelector = createSelector(
+  yearSelector,
+  calendar => get(calendar, 'current.year.months', [])
+);
+
 export const currentYearIdSelector = createSelector(
   yearSelector,
   calendar => get(calendar, 'current.id', '')

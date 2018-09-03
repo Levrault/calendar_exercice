@@ -1,17 +1,23 @@
 import { connect } from 'react-redux';
-import { formValueSelector } from 'redux-form';
 import EventForm from './EventForm';
+import { successSelector, errorSelector } from './EventForm-reselect';
+import { submit, colorChange } from './EventForm-actions';
 
 /**
  * @param {object} state
  * @returns {object}
  */
 const mapStateToProps = (state) => {
-  const selector = formValueSelector('event');
   return {
-    currentColor: selector(state, 'color')
+    success: successSelector(state),
+    errors: errorSelector(state)
   };
 };
 
-export default connect(mapStateToProps)(EventForm);
+const mapActionsToProps = {
+  handleSubmit: submit,
+  handleColorChange: colorChange
+};
+
+export default connect(mapStateToProps, mapActionsToProps)(EventForm);
 

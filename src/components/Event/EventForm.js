@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { reduxForm, Field } from 'redux-form';
 import PropTypes from 'prop-types';
 import EventButton from '../Button/EventButton';
 import ColorInputField from '../Field/ColorInputField';
@@ -15,13 +14,39 @@ class EventForm extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      displayColorField: false
+      displayColorField: false,
+      name: '',
+      color: colors[colors.length - 1].code
     };
   }
 
+  /**
+   * Show/hide color palette
+   */
   handleColorPaletteClick = () => {
     this.setState({
       displayColorField: !this.state.displayColorField
+    });
+  }
+
+  /**
+   * @param {object} event
+   */
+  handleColorChange = (event) => {
+    const value = event.target.value;
+    this.props.handleColorChange(value);
+    this.setState({
+      color: value
+    });
+  }
+
+  /**
+   * @param {object} event
+   */
+  handleNameChange = (event) => {
+    console.log('event.target', event.target); //@TODO : to remove
+    this.setState({
+      name: event.target.value
     });
   }
 
@@ -34,27 +59,42 @@ class EventForm extends Component {
 
   /**
    * Submit form
+   * @param {object} event
    */
   handleSubmit = (event) => {
-    console.log('event', event); //@TODO : to remove
+    event.preventDefault();
+    const { name, color } = this.state;
+    const { monthId, day } = this.props;
+    this.props.handleSubmit({
+      name,
+      color,
+      monthId,
+      day
+    });
   }
 
   /**
   * Render
   */
   render () {
-    const { displayColorField } = this.state;
-    const { handleSubmit, currentColor } = this.props;
+    const { displayColorField, color, name } = this.state;
 
     return (
       <div className={styles.container}>
-        <form className={styles.eventForm} onSubmit={handleSubmit(this.handleSubmit)}>
+        <form className={styles.eventForm} onSubmit={this.handleSubmit}>
 
           <div className={styles.header}>
-            <Field name="event" type="text" label="Rappel" code={currentColor} component={ColorInputField} required />
+            <ColorInputField
+              name="event"
+              type="text"
+              label="Rappel"
+              value={name}
+              onChange={this.handleNameChange}
+              required
+            />
           </div>
 
-          <Field name="color" type="radio" component={ColorPalette} active={displayColorField} />
+          <ColorPalette active={displayColorField} onClick={this.handleColorChange} value={color} />
 
           <div className={styles.buttons}>
 
@@ -80,18 +120,16 @@ class EventForm extends Component {
 EventForm.propTypes = {
   onCancel: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  currentColor: PropTypes.string.isRequired
+  handleColorChange: PropTypes.func.isRequired,
+  monthId: PropTypes.string.isRequired,
+  day: PropTypes.number.isRequired,
+  error: PropTypes.object,
+  success: PropTypes.bool
 };
 
 EventForm.defaultProps = {
-  currentColor: colors[colors.length - 1].code
+  currentColor: colors[colors.length - 1].code,
+  success: false
 };
 
-export default reduxForm({
-  form: 'event',
-  fields: ['event', 'color'],
-  initialValues: {
-    event: '',
-    color: colors[colors.length - 1].code
-  }
-})(EventForm);
+export default EventForm;

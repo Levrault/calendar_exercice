@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { formValueSelector } from 'redux-form';
+import { colorSelector } from '../Event/EventForm-reselect';
 import CalendarButton from './CalendarButton';
 
 /**
@@ -7,9 +7,8 @@ import CalendarButton from './CalendarButton';
  * @returns {object}
  */
 const mapStateToProps = (state) => {
-  const selector = formValueSelector('event');
   return {
-    color: selector(state, 'color')
+    color: colorSelector(state)
   };
 };
 

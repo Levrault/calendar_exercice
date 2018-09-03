@@ -6,21 +6,19 @@ import styles from './ColorButton.css';
 /**
  * Primary button
  * @param {bool} active
- * @param {node} children
  * @returns {node}
  */
-const ColorButton = ({ active, code, ...rest }) => (
+const ColorButton = ({ active, ...rest }) => (
   <button
     type="button"
     className={classnames(styles.container, { [styles.active]: active })}
-    style={{ backgroundColor: code }}
+    style={{ backgroundColor: rest.value }}
     {...rest}
   />
 );
 
 ColorButton.propTypes = {
-  active: PropTypes.bool,
-  code: PropTypes.string.isRequired
+  active: PropTypes.bool
 };
 
 export default ColorButton;
