@@ -32,11 +32,11 @@ class Day extends Component {
   * Render
   */
   render () {
-    const { value, isSelected } = this.props;
+    const { value, isSelected, monthId } = this.props;
     return (
       <div className={styles.day}>
         {isSelected &&
-          <EventFormConnected onCancel={this.handleClick} />
+          <EventFormConnected onCancel={this.handleClick} monthId={monthId} day={value} />
         }
         <CalendarButtonConnected onClick={this.handleClick} active={isSelected}>
           {value}
@@ -51,7 +51,8 @@ Day.propTypes = {
   value: PropTypes.number.isRequired,
   onSelected: PropTypes.func.isRequired,
   selectedDate: PropTypes.string.isRequired,
-  isSelected: PropTypes.bool.isRequired
+  isSelected: PropTypes.bool.isRequired,
+  monthId: PropTypes.string.isRequired
 };
 
 export default Day;

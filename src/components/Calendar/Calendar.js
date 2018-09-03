@@ -1,17 +1,20 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Month from '../Month/Month';
 import Loader from '../Loader/Loader';
 import Error from '../Errors/Error';
 import styles from './Calendar.css';
 
-class Calendar extends PureComponent {
+class Calendar extends Component {
+  shouldComponentUpdate (nextProps) {
+    return nextProps.months.length > 0 && nextProps.months !== this.props.months;
+  }
+
   /**
   * Render
   */
   render () {
     const { months, isLoading, error, year } = this.props;
-    console.log('months', months); //@TODO : to remove
 
     if (error !== null) {
       return <Error {...error} />;

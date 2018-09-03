@@ -58,7 +58,7 @@ class Month extends PureComponent {
   */
   render () {
     const weeks = this.computeWeeks();
-    const { chronology, name } = this.props;
+    const { chronology, name, id } = this.props;
     return (
       <div className={styles.container}>
         <h1 className={styles.name}>{name}</h1>
@@ -72,7 +72,7 @@ class Month extends PureComponent {
                     if (day === 0) return <li key={`${name}-empty-${index}`} className={styles.day} />;
                     return (
                       <li key={`${name}-day${day}`} className={styles.day}>
-                        <DayConnected value={day} date={`${chronology}-${day}`} />
+                        <DayConnected value={day} date={`${chronology}-${day}`} monthId={id} />
                       </li>
                     );
                   })
@@ -91,7 +91,8 @@ Month.propTypes = {
   firstDayIndex: PropTypes.number.isRequired,
   currentDay: PropTypes.number,
   chronology: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired
 };
 
 Month.defaultProps = {

@@ -45,7 +45,6 @@ class YearForm extends PureComponent {
    */
   fetchData = (value) => {
     const { ids, fetch } = this.props;
-    console.log('ids', ids); //@TODO : to remove
     const year = ids.find(elem => elem.year === value);
     if (year && year.id) {
       fetch(year.id);
