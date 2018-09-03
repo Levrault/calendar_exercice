@@ -4,6 +4,7 @@ import EventButton from '../Button/EventButton';
 import ColorInputField from '../Field/ColorInputField';
 import ColorPalette from '../Palette/ColorPalette';
 import colors from '../Palette/colors-constant';
+import Message from '../Message/Message';
 import styles from './EventForm.css';
 
 class EventForm extends Component {
@@ -18,6 +19,10 @@ class EventForm extends Component {
       name: '',
       color: colors[colors.length - 1].code
     };
+  }
+
+  componentWillUnmount () {
+    this.props.handleReset();
   }
 
   /**
@@ -78,6 +83,7 @@ class EventForm extends Component {
   */
   render () {
     const { displayColorField, color, name } = this.state;
+    const { success, errors } = this.props;
 
     return (
       <div className={styles.container}>
@@ -90,11 +96,19 @@ class EventForm extends Component {
               label="Rappel"
               value={name}
               onChange={this.handleNameChange}
-              required
             />
           </div>
 
           <ColorPalette active={displayColorField} onClick={this.handleColorChange} value={color} />
+
+          {success && <Message type="success">Event added</Message>}
+
+          {errors &&
+              Object.keys(errors).map(index => {
+                const error = errors[index];
+                return <Message key={error} type="error">{index} {error}</Message>;
+              })
+          }
 
           <div className={styles.buttons}>
 
@@ -121,9 +135,10 @@ EventForm.propTypes = {
   onCancel: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   handleColorChange: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
   monthId: PropTypes.string.isRequired,
   day: PropTypes.number.isRequired,
-  error: PropTypes.object,
+  errors: PropTypes.object,
   success: PropTypes.bool
 };
 

@@ -11,7 +11,8 @@ const palette = {
   'palette-title': '#757575',
   'palette-primary-text': '#212121',
   'palette-secondary-text': '#9E9E9E',
-  'palette-error': '#F44336'
+  'palette-error': '#F44336',
+  'palette-success': '#388E3C'
 };
 
 // spaces

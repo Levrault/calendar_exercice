@@ -4,6 +4,7 @@ import axios from 'axios';
 export const EVENTFORM_SUBMIT_BEGIN = 'EVENTFORM_SUBMIT_BEGIN';
 export const EVENTFORM_SUBMIT_SUCCESS = 'EVENTFORM_SUBMIT_SUCCESS';
 export const EVENTFORM_SUBMIT_FAILURE = 'EVENTFORM_SUBMIT_FAILURE';
+export const EVENTFORM_RESET = 'EVENTFORM_RESET';
 export const EVENTFORM_COLOR_CHANGE = 'EVENTFORM_COLOR_CHANGE';
 
 /**
@@ -33,10 +34,21 @@ export const eventFormSubmitError = error => ({
   payload: { error }
 });
 
+/**
+ * Update color
+ * @param {string} color
+ */
 export const colorChange = (color) => ({
   type: EVENTFORM_COLOR_CHANGE,
   payload: { color }
+});
 
+/**
+ * Reset all store data for Event
+ * @returns {object}
+ */
+export const eventFormReset = () => ({
+  type: EVENTFORM_RESET
 });
 
 /**
@@ -51,6 +63,6 @@ export const submit = (params) => async (dispatch) => {
     });
     dispatch(eventFormSubmitSuccess(response.data));
   } catch (error) {
-    dispatch(eventFormSubmitError(error));
+    dispatch(eventFormSubmitError(error.response.data.errors));
   }
 };
