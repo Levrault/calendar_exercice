@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Month from '../Month/Month';
+import MonthConnected from '../Month/MonthConnected';
 import Loader from '../Loader/Loader';
 import Error from '../Errors/Error';
 import styles from './Calendar.css';
@@ -28,7 +28,7 @@ class Calendar extends Component {
       <div className={styles.calendar}>
         {
           months.map(month => (
-            <Month key={month.name} {...month} year={year} />
+            <MonthConnected key={month.name} {...month} year={year} />
           ))
         }
         {isLoading &&

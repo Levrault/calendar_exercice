@@ -49,7 +49,6 @@ class EventForm extends Component {
    * @param {object} event
    */
   handleNameChange = (event) => {
-    console.log('event.target', event.target); //@TODO : to remove
     this.setState({
       name: event.target.value
     });
@@ -83,10 +82,11 @@ class EventForm extends Component {
   */
   render () {
     const { displayColorField, color, name } = this.state;
-    const { success, errors } = this.props;
+    const { errors } = this.props;
 
     return (
       <div className={styles.container}>
+
         <form className={styles.eventForm} onSubmit={this.handleSubmit}>
 
           <div className={styles.header}>
@@ -96,12 +96,11 @@ class EventForm extends Component {
               label="Rappel"
               value={name}
               onChange={this.handleNameChange}
+              required
             />
           </div>
 
           <ColorPalette active={displayColorField} onClick={this.handleColorChange} value={color} />
-
-          {success && <Message type="success">Event added</Message>}
 
           {errors &&
               Object.keys(errors).map(index => {
@@ -111,7 +110,6 @@ class EventForm extends Component {
           }
 
           <div className={styles.buttons}>
-
             <EventButton type="button" onClick={this.handleCloseClick}>
               <i className="material-icons">clear</i>
             </EventButton>
@@ -138,13 +136,12 @@ EventForm.propTypes = {
   handleReset: PropTypes.func.isRequired,
   monthId: PropTypes.string.isRequired,
   day: PropTypes.number.isRequired,
-  errors: PropTypes.object,
-  success: PropTypes.bool
+  errors: PropTypes.object
 };
 
 EventForm.defaultProps = {
   currentColor: colors[colors.length - 1].code,
-  success: false
+  event: {}
 };
 
 export default EventForm;
