@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import EventForm from './EventForm';
 import { successSelector, errorSelector } from './EventForm-reselect';
-import { submit, colorChange, eventFormReset } from './EventForm-actions';
+import { post, colorChange, eventFormReset } from './EventForm-actions';
 
 /**
  * @param {object} state
@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapActionsToProps = {
-  handleSubmit: submit,
+  handleSubmit: post,
   handleColorChange: colorChange,
   handleReset: eventFormReset
 };

@@ -1,17 +1,26 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import WeekHeader from '../Week/WeekHeader';
 import DayConnected from '../Day/DayConnected';
 import styles from './Month.css';
 
-class Month extends PureComponent {
+class Month extends Component {
   /**
-  * @contructor
-  * @param {object} props
-  */
-  constructor (props) {
-    super(props);
-    this.state = {};
+   * Return the good event
+   * @param {array} events
+   */
+  static getEvent (events, day) {
+    if (!Array.isArray(events)) return;
+    return events.find(event => event.day === day);
+  }
+
+  shouldComponentUpdate (nextProps) {
+    let shouldUpdate = false;
+    if (Array.isArray(nextProps.events)) {
+      shouldUpdate = nextProps.events.length !== this.props.events.length;
+    }
+
+    return shouldUpdate;
   }
 
   /**
@@ -58,7 +67,7 @@ class Month extends PureComponent {
   */
   render () {
     const weeks = this.computeWeeks();
-    const { chronology, name, id } = this.props;
+    const { chronology, name, id, events } = this.props;
     return (
       <div className={styles.container}>
         <h1 className={styles.name}>{name}</h1>
@@ -72,7 +81,12 @@ class Month extends PureComponent {
                     if (day === 0) return <li key={`${name}-empty-${index}`} className={styles.day} />;
                     return (
                       <li key={`${name}-day${day}`} className={styles.day}>
-                        <DayConnected value={day} date={`${chronology}-${day}`} monthId={id} />
+                        <DayConnected
+                          value={day}
+                          date={`${chronology}-${day}`}
+                          monthId={id}
+                          event={this.constructor.getEvent(events, day)}
+                        />
                       </li>
                     );
                   })
@@ -92,11 +106,19 @@ Month.propTypes = {
   currentDay: PropTypes.number,
   chronology: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  events: PropTypes.arrayOf(PropTypes.shape({
+    monthId: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+    day: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired
+  }))
 };
 
 Month.defaultProps = {
-  currentDay: 0
+  currentDay: 0,
+  events: []
 };
 
 export default Month;

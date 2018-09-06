@@ -1,21 +1,14 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import CalendarButtonConnected from '../Button/CalendarButtonConnected';
 import EventFormConnected from '../Event/EventFormConnected';
+import EventShowConnected from '../Event/EventShowConnected';
 import styles from './Day.css';
 
 /**
  * Show a day
  */
-class Day extends Component {
-  /**
-   * @param {object} nextProps
-   * @returns {bool}
-   */
-  shouldComponentUpdate (nextProps) {
-    return nextProps.isSelected !== this.props.isSelected;
-  }
-
+class Day extends PureComponent {
   /**
    * active/inactive day when clicked
    */
@@ -32,13 +25,33 @@ class Day extends Component {
   * Render
   */
   render () {
-    const { value, isSelected, monthId } = this.props;
+    const { value, isSelected, monthId, event } = this.props;
+
+    let editMode = false;
+    if (event) {
+      editMode = true;
+    }
+
     return (
       <div className={styles.day}>
-        {isSelected &&
-          <EventFormConnected onCancel={this.handleClick} monthId={monthId} day={value} />
+        {isSelected && !editMode &&
+          <EventFormConnected
+            onCancel={this.handleClick}
+            monthId={monthId}
+            day={value} />
         }
-        <CalendarButtonConnected onClick={this.handleClick} active={isSelected}>
+
+        {isSelected && editMode &&
+          <EventShowConnected
+            onCancel={this.handleClick}
+            {...event} />
+        }
+
+        <CalendarButtonConnected
+          onClick={this.handleClick}
+          active={isSelected}
+          event={event}
+          editMode={editMode}>
           {value}
         </CalendarButtonConnected>
       </div>
@@ -52,7 +65,14 @@ Day.propTypes = {
   onSelected: PropTypes.func.isRequired,
   selectedDate: PropTypes.string.isRequired,
   isSelected: PropTypes.bool.isRequired,
-  monthId: PropTypes.string.isRequired
+  monthId: PropTypes.string.isRequired,
+  event: PropTypes.shape({
+    monthId: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+    day: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired
+  })
 };
 
 export default Day;

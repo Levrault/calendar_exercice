@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import get from 'lodash/get';
 
-const eventFormSelector = state => get(state, 'event');
+const eventFormSelector = state => get(state, 'eventForm');
 
 export const colorSelector = createSelector(
   eventFormSelector,

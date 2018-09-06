@@ -1,6 +1,7 @@
 import axios from 'axios';
 import minBy from 'lodash/minBy';
 import maxBy from 'lodash/maxBy';
+import { eventsInit } from '../Event/Events-actions';
 
 export const YEAR_FETCH_BEGIN = 'CALENDAR_FETCH_BEGIN';
 export const YEAR_FETCH_SUCCESS = 'CALENDAR_FETCH_SUCCESS';
@@ -78,12 +79,13 @@ export const yearFetchError = error => ({
 export const fetch = (id) => async (dispatch) => {
   dispatch(yearFetchBegin());
   try {
-    const response = await axios.get(`${BASE_URL}calendar/${id}`, {
+    const { data } = await axios.get(`${BASE_URL}calendar/${id}`, {
       params: {
         full: true
       }
     });
-    dispatch(yearFetchSuccess(response.data));
+    dispatch(yearFetchSuccess(data));
+    dispatch(eventsInit(data));
   } catch (error) {
     dispatch(yearFetchError(error));
   }
