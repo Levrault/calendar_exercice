@@ -49,11 +49,9 @@ class Month extends Component {
     }
 
     // complete the rest of the week with dumb value
-    if (week.length < 7) {
-      const rest = 7 - week.length;
-      for (let index = 0; index < rest; index++) {
-        week.push(0);
-      }
+    const rest = 7 - week.length;
+    for (let index = 0; index < rest; index++) {
+      week.push(0);
     }
 
     // add last week

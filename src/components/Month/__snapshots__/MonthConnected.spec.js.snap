@@ -1,0 +1,367 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MonthConnected component should render without problem 1`] = `
+<div>
+  <h1>
+    February
+  </h1>
+  <div>
+    <ul>
+      <li>
+        S
+      </li>
+      <li>
+        M
+      </li>
+      <li>
+        T
+      </li>
+      <li>
+        W
+      </li>
+      <li>
+        T
+      </li>
+      <li>
+        F
+      </li>
+      <li>
+        S
+      </li>
+    </ul>
+    <ul>
+      <li />
+      <li />
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            1
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            2
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            3
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            4
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            5
+          </button>
+        </div>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            6
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            7
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className="undefined"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#EEEEEE",
+              }
+            }
+          >
+            8
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            9
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            10
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            11
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            12
+          </button>
+        </div>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            13
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            14
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            15
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            16
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            17
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            18
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className="undefined"
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#546E7A",
+              }
+            }
+          >
+            19
+          </button>
+        </div>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            20
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            21
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            22
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            23
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            24
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            25
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            26
+          </button>
+        </div>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            27
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button
+            className=""
+            onClick={[Function]}
+            style={Object {}}
+          >
+            28
+          </button>
+        </div>
+      </li>
+      <li />
+      <li />
+      <li />
+      <li />
+      <li />
+    </ul>
+  </div>
+</div>
+`;

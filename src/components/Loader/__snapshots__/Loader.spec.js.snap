@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader component should render without problem 1`] = `
+<div>
+  <div />
+  <i
+    className="material-icons"
+  >
+    autorenew
+  </i>
+</div>
+`;

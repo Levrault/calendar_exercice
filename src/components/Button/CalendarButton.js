@@ -29,8 +29,7 @@ CalendarButton.propTypes = {
 };
 
 CalendarButton.defaultProps = {
-  active: false,
-  onClick: () => {}
+  active: false
 };
 
 export default CalendarButton;

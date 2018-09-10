@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventShow component should render without problem 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#546E7A",
+    }
+  }
+>
+  <div>
+    hello
+  </div>
+  <div>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        className="material-icons"
+      >
+        clear
+      </i>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        className="material-icons"
+      >
+        delete
+      </i>
+    </button>
+  </div>
+</div>
+`;

@@ -93,25 +93,7 @@ export const post = (params) => async (dispatch) => {
     dispatch(eventFormSubmitSuccess(response.data));
     dispatch(eventCreated(response.data));
   } catch (error) {
-    dispatch(eventFormSubmitError(error.response.data.errors));
-  }
-};
-
-/**
- *  Get a specefic year with all his data
- * @param {string} id
- * @param {string} params
- */
-export const put = (id, params) => async (dispatch) => {
-  dispatch(eventFormSubmitBegin());
-  try {
-    const response = await axios.put(`${BASE_URL}events/${id}`, {
-      ...params
-    });
-    dispatch(eventFormSubmitSuccess(response.data));
-    dispatch(eventCreated(response.data));
-  } catch (error) {
-    dispatch(eventFormSubmitError(error.response.data.errors));
+    dispatch(eventFormSubmitError(error));
   }
 };
 
@@ -123,10 +105,10 @@ export const put = (id, params) => async (dispatch) => {
 export const deleteEvent = (id, monthId) => async (dispatch) => {
   dispatch(eventFormDeleteBegin());
   try {
-    const response = await axios.delete(`${BASE_URL}events/${id}`);
-    dispatch(eventFormDeleteSuccess(response.data));
+    await axios.delete(`${BASE_URL}events/${id}`);
+    dispatch(eventFormDeleteSuccess());
     dispatch(eventDeleted(id, monthId));
   } catch (error) {
-    dispatch(eventFormDeleteError(error.response.data.errors));
+    dispatch(eventFormDeleteError(error));
   }
 };

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeekHeader component should render without problem 1`] = `
+<ul>
+  <li>
+    S
+  </li>
+  <li>
+    M
+  </li>
+  <li>
+    T
+  </li>
+  <li>
+    W
+  </li>
+  <li>
+    T
+  </li>
+  <li>
+    F
+  </li>
+  <li>
+    S
+  </li>
+</ul>
+`;

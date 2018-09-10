@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message component should render when type has "error" value 1`] = `
+<div
+  className="undefined"
+>
+  <i
+    className="material-icons"
+  >
+    error
+  </i>
+  Message
+</div>
+`;
+
+exports[`Message component should render when type has "success" value 1`] = `
+<div
+  className=""
+>
+  <i
+    className="material-icons"
+  >
+    check_circle
+  </i>
+  Message
+</div>
+`;
+
+exports[`Message component should render with empty type 1`] = `
+<div
+  className=""
+>
+  Message
+</div>
+`;

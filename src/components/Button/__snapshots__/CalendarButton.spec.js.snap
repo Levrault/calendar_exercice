@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CalendarButton component should render with active mode on 1`] = `
+<button
+  className="undefined"
+  style={
+    Object {
+      "backgroundColor": "#EEEEEE",
+    }
+  }
+>
+  CalendarButton
+</button>
+`;
+
+exports[`CalendarButton component should render without being active or in edit mode 1`] = `
+<button
+  className=""
+  style={Object {}}
+>
+  CalendarButton
+</button>
+`;

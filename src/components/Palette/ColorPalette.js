@@ -7,6 +7,9 @@ import styles from './ColorPalette.css';
 
 /**
  * Show color palette, change calender selected date's color
+ * @param {bool} active
+ * @param {string} value
+ * @param {function} onClick
  */
 class ColorPalette extends PureComponent {
   /**

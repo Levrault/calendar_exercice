@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link component should render without problem 1`] = `
+<a
+  title="Title"
+>
+  This is a react-router:Link component: 
+</a>
+`;

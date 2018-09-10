@@ -98,12 +98,12 @@ export const fetch = (id) => async (dispatch) => {
 export const fetchAll = (full) => async (dispatch) => {
   dispatch(yearFetchAllBegin());
   try {
-    const response = await axios.get(`${BASE_URL}calendar`, {
+    const { data } = await axios.get(`${BASE_URL}calendar`, {
       params: {
         full
       }
     });
-    dispatch(yearFetchAllSuccess(response.data));
+    dispatch(yearFetchAllSuccess(data));
   } catch (error) {
     dispatch(yearFetchAllError(error));
   }

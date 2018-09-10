@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`YearForm component should render when loading when getting data 1`] = `
+<span>
+   Loading 
+</span>
+`;
+
+exports[`YearForm component should render without problem 1`] = `
+<form>
+  <span>
+    <button
+      className="undefined"
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        className="material-icons"
+      >
+        chevron_left
+      </i>
+    </button>
+    <input
+      readOnly={true}
+      type="number"
+      value={2018}
+    />
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        className="material-icons"
+      >
+        chevron_right
+      </i>
+    </button>
+  </span>
+</form>
+`;

@@ -1,0 +1,18 @@
+{
+  "roots": [
+    "<rootDir>/src"
+  ],
+  "rootDir": "../../",
+  "unmockedModulePathPatterns": [
+    "node_modules/react/",
+    "node_modules/babel-runtime"
+  ],
+  "setupFiles": ["<rootDir>/src/tools/test/setup.js"],
+  "moduleNameMapper": {
+    "\\.(font|css)$": "<rootDir>/src/tools/test/fileMock.js"
+  },
+  "testPathIgnorePatterns": [
+    "<rootDir>/(node_modules|public|)/",
+    "<rootDir>/src/tools/*"
+  ]
+}

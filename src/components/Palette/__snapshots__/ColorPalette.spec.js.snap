@@ -1,0 +1,327 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorPalette component should be hidden when active is false 1`] = `
+<ul
+  className=""
+>
+  <li>
+    <button
+      className="undefined"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FF5252",
+        }
+      }
+      type="button"
+      value="#FF5252"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FF4081",
+        }
+      }
+      type="button"
+      value="#FF4081"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#E040FB",
+        }
+      }
+      type="button"
+      value="#E040FB"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FF6E40",
+        }
+      }
+      type="button"
+      value="#FF6E40"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#448AFF",
+        }
+      }
+      type="button"
+      value="#448AFF"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#64FFDA",
+        }
+      }
+      type="button"
+      value="#64FFDA"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#B2FF59",
+        }
+      }
+      type="button"
+      value="#B2FF59"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#CDDC39",
+        }
+      }
+      type="button"
+      value="#CDDC39"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#795548",
+        }
+      }
+      type="button"
+      value="#795548"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#546E7A",
+        }
+      }
+      type="button"
+      value="#546E7A"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#0097A7",
+        }
+      }
+      type="button"
+      value="#0097A7"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#EEEEEE",
+        }
+      }
+      type="button"
+      value="#EEEEEE"
+    />
+  </li>
+</ul>
+`;
+
+exports[`ColorPalette component should render correctly when active is true 1`] = `
+<ul
+  className="undefined"
+>
+  <li>
+    <button
+      className="undefined"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FF5252",
+        }
+      }
+      type="button"
+      value="#FF5252"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FF4081",
+        }
+      }
+      type="button"
+      value="#FF4081"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#E040FB",
+        }
+      }
+      type="button"
+      value="#E040FB"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FF6E40",
+        }
+      }
+      type="button"
+      value="#FF6E40"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#448AFF",
+        }
+      }
+      type="button"
+      value="#448AFF"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#64FFDA",
+        }
+      }
+      type="button"
+      value="#64FFDA"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#B2FF59",
+        }
+      }
+      type="button"
+      value="#B2FF59"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#CDDC39",
+        }
+      }
+      type="button"
+      value="#CDDC39"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#795548",
+        }
+      }
+      type="button"
+      value="#795548"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#546E7A",
+        }
+      }
+      type="button"
+      value="#546E7A"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#0097A7",
+        }
+      }
+      type="button"
+      value="#0097A7"
+    />
+  </li>
+  <li>
+    <button
+      className=""
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#EEEEEE",
+        }
+      }
+      type="button"
+      value="#EEEEEE"
+    />
+  </li>
+</ul>
+`;
