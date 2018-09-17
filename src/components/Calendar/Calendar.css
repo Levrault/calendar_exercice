@@ -1,5 +1,18 @@
-.calendar {
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  color: $palette-title;
+  font-weight: 300;
+  margin: $space-l auto;
+}
+
+.content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   position: relative;
 }
