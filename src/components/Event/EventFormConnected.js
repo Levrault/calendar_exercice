@@ -15,9 +15,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapActionsToProps = {
-  handleSubmit: post,
-  handleColorChange: colorChange,
-  handleReset: eventFormReset
+  onSubmit: post,
+  onColorChange: colorChange,
+  onReset: eventFormReset
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(EventForm);

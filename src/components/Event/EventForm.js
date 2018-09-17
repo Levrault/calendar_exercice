@@ -22,7 +22,7 @@ class EventForm extends Component {
   }
 
   componentWillUnmount () {
-    this.props.handleReset();
+    this.props.onReset();
   }
 
   /**
@@ -37,9 +37,9 @@ class EventForm extends Component {
   /**
    * @param {object} event
    */
-  handleColorChange = (event) => {
+  onColorChange = (event) => {
     const value = event.target.value;
-    this.props.handleColorChange(value);
+    this.props.onColorChange(value);
     this.setState({
       color: value
     });
@@ -65,11 +65,11 @@ class EventForm extends Component {
    * Submit form
    * @param {object} event
    */
-  handleSubmit = (event) => {
+  onSubmit = (event) => {
     event.preventDefault();
     const { name, color } = this.state;
     const { monthId, day } = this.props;
-    this.props.handleSubmit({
+    this.props.onSubmit({
       name,
       color,
       monthId,
@@ -87,7 +87,7 @@ class EventForm extends Component {
     return (
       <div className={styles.container}>
 
-        <form className={styles.eventForm} onSubmit={this.handleSubmit}>
+        <form className={styles.eventForm} onSubmit={this.onSubmit}>
 
           <div className={styles.header}>
             <ColorInputField
@@ -100,7 +100,7 @@ class EventForm extends Component {
             />
           </div>
 
-          <ColorPalette active={displayColorField} onClick={this.handleColorChange} value={color} />
+          <ColorPalette active={displayColorField} onClick={this.onColorChange} value={color} />
 
           {errors &&
               Object.keys(errors).map(index => {
@@ -131,9 +131,9 @@ class EventForm extends Component {
 
 EventForm.propTypes = {
   onCancel: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-  handleColorChange: PropTypes.func.isRequired,
-  handleReset: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onColorChange: PropTypes.func.isRequired,
+  onReset: PropTypes.func.isRequired,
   monthId: PropTypes.string.isRequired,
   day: PropTypes.number.isRequired,
   errors: PropTypes.object

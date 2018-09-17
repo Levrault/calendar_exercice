@@ -6,9 +6,9 @@ import EventForm from './EventForm';
 
 const mock = {
   onCancel: jest.fn(),
-  handleSubmit: jest.fn(),
-  handleColorChange: jest.fn(),
-  handleReset: jest.fn(),
+  onSubmit: jest.fn(),
+  onColorChange: jest.fn(),
+  onReset: jest.fn(),
   monthId: 'a4e8a03dbe54ca7d',
   day: 1,
   errors: null
@@ -37,7 +37,7 @@ describe('EventForm component', () => {
     );
 
     component.instance().componentWillUnmount();
-    expect(component.instance().props.handleReset).toHaveBeenCalled();
+    expect(component.instance().props.onReset).toHaveBeenCalled();
   });
 
   it('should update displayColorField state when handleColorPaletteClick is called', () => {
@@ -50,13 +50,13 @@ describe('EventForm component', () => {
     expect(component.instance().state.displayColorField).toBeTruthy();
   });
 
-  it('should update color when handleColorChange is called', () => {
+  it('should update color when onColorChange is called', () => {
     const component = shallow(
       <EventForm {...mock} />,
     );
 
     expect(component.instance().state.color).toEqual(colors[colors.length - 1].code);
-    component.instance().handleColorChange({ target: { value: colors[0].code } });
+    component.instance().onColorChange({ target: { value: colors[0].code } });
     expect(component.instance().state.color).toEqual(colors[0].code);
   });
 
@@ -80,12 +80,12 @@ describe('EventForm component', () => {
     expect(component.instance().props.onCancel).toHaveBeenCalled();
   });
 
-  it('should call handleSubmit when handleSubmit is called', () => {
+  it('should call onSubmit when onSubmit is called', () => {
     const component = shallow(
       <EventForm {...mock} />,
     );
     component.instance().handleNameChange({ target: { value: 'name' } });
-    component.instance().handleSubmit({ preventDefault: jest.fn() });
-    expect(component.instance().props.handleSubmit).toHaveBeenCalled();
+    component.instance().onSubmit({ preventDefault: jest.fn() });
+    expect(component.instance().props.onSubmit).toHaveBeenCalled();
   });
 });
