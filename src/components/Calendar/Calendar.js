@@ -25,15 +25,18 @@ class Calendar extends Component {
     }
 
     return (
-      <div className={styles.calendar}>
-        {
-          months.map(month => (
-            <MonthConnected key={month.name} {...month} year={year} />
-          ))
-        }
-        {isLoading &&
-          <Loader />
-        }
+      <div className={styles.container}>
+        <h1 className={styles.title}>Calendar {year}</h1>
+        <div className={styles.content}>
+          {
+            months.map(month => (
+              <MonthConnected key={month.name} {...month} year={year} />
+            ))
+          }
+          {isLoading &&
+            <Loader />
+          }
+        </div>
       </div>
     );
   }

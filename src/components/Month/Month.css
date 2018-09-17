@@ -8,7 +8,7 @@
   font-size: 1.1rem;
   font-weight: 300;
   margin-bottom: $space-s;
-  margin-left: resolve($space-m + $space-s);
+  margin-left: $space-m;
 }
 
 .week {
