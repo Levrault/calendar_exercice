@@ -1,5 +1,6 @@
 .day {
   display: flex;
   flex: 1;
+  max-width: 32px;
   position: relative;
 }
