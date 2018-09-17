@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorButton component should render correctly 1`] = `
+<button
+  className=""
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "backgroundColor": "#FF4081",
+    }
+  }
+  type="button"
+  value="#FF4081"
+/>
+`;
+
+exports[`ColorButton component should render correctly when activated 1`] = `
+<button
+  className="undefined"
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "backgroundColor": "#FF4081",
+    }
+  }
+  type="button"
+  value="#FF4081"
+/>
+`;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventButton component should render correctly 1`] = `
+<button
+  className=""
+  type="button"
+>
+  <i
+    className="material-icons"
+  >
+    clear
+  </i>
+</button>
+`;
+
+exports[`EventButton component should render correctly when active 1`] = `
+<button
+  className="undefined"
+  type="button"
+>
+  <i
+    className="material-icons"
+  >
+    clear
+  </i>
+</button>
+`;

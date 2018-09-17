@@ -5,6 +5,8 @@ import styles from './ColorInputField.css';
 
 /**
  * @param {string} label
+ * @param {string} code
+ * @return {node}
  */
 const ColorInputField = ({ label, code, ...rest }) => {
   return (

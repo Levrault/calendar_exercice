@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main component should render without problem 1`] = `
+<main>
+  <div>
+    Main
+  </div>
+</main>
+`;

@@ -13,6 +13,7 @@ const register = {
  */
 const Error = ({ response }) => {
   const Component = register[response.status];
+  if (!Component) return null;
   return (
     <div className={styles.container} >
       <Component />

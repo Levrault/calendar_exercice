@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorInput component should render with a different border color 1`] = `
+<div>
+  <input
+    name="event"
+    style={
+      Object {
+        "borderBottom": "2px solid #FFFFFF",
+      }
+    }
+    type="text"
+  />
+  <label
+    htmlFor="nodejs"
+  >
+    Rappel
+  </label>
+</div>
+`;
+
+exports[`ColorInput component should render without problem 1`] = `
+<div>
+  <input
+    name="event"
+    style={
+      Object {
+        "borderBottom": "2px solid undefined",
+      }
+    }
+    type="text"
+  />
+  <label
+    htmlFor="nodejs"
+  >
+    Rappel
+  </label>
+</div>
+`;

@@ -10,40 +10,36 @@ export const dataSelector = createSelector(
 
 export const monthsSelector = createSelector(
   yearSelector,
-  calendar => get(calendar, 'current.months', [])
+  year => get(year, 'current.months', [])
 );
 
 export const currentYearSelector = createSelector(
   yearSelector,
-  calendar => get(calendar, 'current.year', 2018)
+  year => get(year, 'current.year', 2018)
 );
 
-export const currentMonthsSelector = createSelector(
-  yearSelector,
-  calendar => get(calendar, 'current.year.months', [])
-);
 
 export const currentYearIdSelector = createSelector(
   yearSelector,
-  calendar => get(calendar, 'current.id', '')
+  year => get(year, 'current.id', '')
 );
 
 export const loadingSelector = createSelector(
   yearSelector,
-  calendar => get(calendar, 'loading', false)
+  year => get(year, 'loading', false)
 );
 
 export const errorSelector = createSelector(
   yearSelector,
-  calendar => get(calendar, 'error', null)
+  year => get(year, 'error', null)
 );
 
 export const minSelector = createSelector(
   yearSelector,
-  calendar => get(calendar, 'min', 2015)
+  year => get(year, 'min', 2015)
 );
 
 export const maxSelector = createSelector(
   yearSelector,
-  calendar => get(calendar, 'max', 2025)
+  year => get(year, 'max', 2025)
 );

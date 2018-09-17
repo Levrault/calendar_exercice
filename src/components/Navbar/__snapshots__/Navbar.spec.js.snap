@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar component should render without problem 1`] = `
+<header>
+  <ul>
+    <li>
+      Calendar App exercice
+    </li>
+    <li>
+      <ul>
+        <li>
+          <form>
+            <span>
+              <button
+                className="undefined"
+                onClick={[Function]}
+                type="button"
+              >
+                <i
+                  className="material-icons"
+                >
+                  chevron_left
+                </i>
+              </button>
+              <input
+                readOnly={true}
+                type="number"
+                value={2018}
+              />
+              <button
+                className=""
+                onClick={[Function]}
+                type="button"
+              >
+                <i
+                  className="material-icons"
+                >
+                  chevron_right
+                </i>
+              </button>
+            </span>
+          </form>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</header>
+`;

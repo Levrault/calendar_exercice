@@ -51,6 +51,9 @@ class YearForm extends PureComponent {
     }
   }
 
+  /**
+   * @param {number} value
+   */
   updateValue = (value) => () => {
     const { min, max } = this.props;
 
