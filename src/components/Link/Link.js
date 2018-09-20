@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link as RouterLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Link.css';
 
 /**
@@ -8,7 +8,7 @@ import styles from './Link.css';
  * @param {object} props
  */
 const Link = (props) => (
-  <RouterLink {...props} />
+  <NavLink {...props} exact activeClassName={styles.active} />
 );
 
 Link.propstype = {
