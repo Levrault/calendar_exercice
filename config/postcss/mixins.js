@@ -23,6 +23,5 @@ const mixins = {
       'list-style': 'none'
     };
   }
-
 };
 module.exports = mixins;
