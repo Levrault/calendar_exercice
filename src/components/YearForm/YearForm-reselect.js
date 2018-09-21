@@ -1,6 +1,11 @@
 import { createSelector } from 'reselect';
 import get from 'lodash/get';
 
+/**
+ * Create selector
+ * @param {object} state
+ * @returns {function}
+ */
 const yearSelector = state => get(state, 'year');
 
 export const dataSelector = createSelector(

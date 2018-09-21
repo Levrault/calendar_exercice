@@ -7,11 +7,9 @@ import CalendarButton from './CalendarButton';
  * @param {object} ownProps
  * @returns {object}
  */
-const mapStateToProps = (state, ownProps) => {
-  return {
-    color: ownProps.editMode ? ownProps.event.color : colorSelector(state),
-    active: ownProps.active || ownProps.editMode
-  };
-};
+const mapStateToProps = (state, ownProps) => ({
+  color: ownProps.editMode ? ownProps.event.color : colorSelector(state),
+  active: ownProps.active || ownProps.editMode
+});
 
 export default connect(mapStateToProps)(CalendarButton);

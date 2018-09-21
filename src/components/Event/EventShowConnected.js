@@ -6,10 +6,7 @@ import { deleteEvent } from './EventForm-actions';
  * @param {object} state
  * @returns {object}
  */
-const mapStateToProps = (state) => {
-  return {
-  };
-};
+const mapStateToProps = (state) => ({});
 
 const mapActionsToProps = {
   onDelete: deleteEvent

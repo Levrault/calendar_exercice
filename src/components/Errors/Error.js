@@ -8,8 +8,10 @@ const register = {
 };
 
 /**
- * Show message error
- * @param {string} message
+ * Map the corresponding error
+ * to the associate component
+ * @param {object} response
+ * @returns {node|null}
  */
 const Error = ({ response }) => {
   const Component = register[response.status];

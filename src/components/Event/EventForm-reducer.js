@@ -18,6 +18,12 @@ const initialState = {
   day: 0
 };
 
+/**
+ * Event form reducer
+ * @param {object} state
+ * @param {object} action
+ * @returns {object}
+ */
 export const eventFormReducer = (state = initialState, action) => {
   switch (action.type) {
   case EVENTFORM_SUBMIT_BEGIN:

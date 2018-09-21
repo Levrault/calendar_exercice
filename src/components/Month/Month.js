@@ -4,20 +4,42 @@ import WeekHeader from '../Week/WeekHeader';
 import DayConnected from '../Day/DayConnected';
 import styles from './Month.css';
 
+/**
+ * Display a month
+ * @class Month
+ * @param {number} numberOfDays
+ * @param {number} firstDayIndex e.g. 2 will begin a Monday and 1 a sunday
+ * @param {number} [currentDay=0]
+ * @param {number} chronology
+ * @param {string} name
+ * @param {string} id
+ * @param {array} [events=[]]
+ */
 class Month extends Component {
   /**
    * Return the good event
    * @param {array} events
+   * @param {string} day
+   * @returns {bool}
    */
   static getEvent (events, day) {
     if (!Array.isArray(events)) return;
     return events.find(event => event.day === day);
   }
 
+  /**
+   * Update only when new event or first day change
+   * @param {object} nextProps
+   * @returns {bool}
+   */
   shouldComponentUpdate (nextProps) {
     let shouldUpdate = false;
     if (Array.isArray(nextProps.events)) {
       shouldUpdate = nextProps.events.length !== this.props.events.length;
+    }
+
+    if (nextProps.firstDayIndex !== this.props.firstDayIndex) {
+      shouldUpdate = true;
     }
 
     return shouldUpdate;
@@ -26,6 +48,7 @@ class Month extends Component {
   /**
    * Create a formated array to put the good day in
    * the good week
+   * @returns {array} formated week
    */
   computeWeeks = () => {
     const { numberOfDays, firstDayIndex } = this.props;
@@ -61,7 +84,7 @@ class Month extends Component {
   }
 
   /**
-  * Render
+  * @returns {node}
   */
   render () {
     const weeks = this.computeWeeks();

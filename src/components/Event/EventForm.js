@@ -7,9 +7,20 @@ import colors from '../Palette/colors-constant';
 import Message from '../Message/Message';
 import styles from './EventForm.css';
 
+/**
+ * Event form
+ * @class EventForm
+ * @param {function} onCancel
+ * @param {function} onSubmit
+ * @param {function} onColorChange
+ * @param {function} onReset
+ * @param {string} monthId
+ * @param {number} day
+ * @param {object} [errors]
+ */
 class EventForm extends Component {
   /**
-  * @contructor
+  * @constructor
   * @param {object} props
   */
   constructor (props) {
@@ -21,6 +32,9 @@ class EventForm extends Component {
     };
   }
 
+  /**
+   * Reset form when mounted
+   */
   componentWillUnmount () {
     this.props.onReset();
   }
@@ -35,6 +49,7 @@ class EventForm extends Component {
   }
 
   /**
+   * Update color's value
    * @param {object} event
    */
   onColorChange = (event) => {
@@ -46,6 +61,7 @@ class EventForm extends Component {
   }
 
   /**
+   * Update name's value
    * @param {object} event
    */
   handleNameChange = (event) => {
@@ -55,7 +71,7 @@ class EventForm extends Component {
   }
 
   /**
-   * Close form
+   * Close event form
    */
   handleCloseClick = () => {
     this.props.onCancel();
@@ -79,6 +95,7 @@ class EventForm extends Component {
 
   /**
   * Render
+  * @returns {node}
   */
   render () {
     const { displayColorField, color, name } = this.state;

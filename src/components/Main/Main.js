@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import styles from './Main.css';
 
 /**
- * Main div container
+ * Manage router children loading
  * @param {children} children
+ * @returns {node}
  */
 const Main = ({ children }) => (
   <main className={styles.main}>

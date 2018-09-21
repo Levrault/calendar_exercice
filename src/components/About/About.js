@@ -3,6 +3,7 @@ import styles from './About.css';
 
 /**
  * About page
+ * @returns {node}
  */
 const About = () => (
   <div className={styles.container}>

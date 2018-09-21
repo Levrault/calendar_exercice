@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import styles from './ColorButton.css';
 
 /**
- * Primary button
+ * Color button
  * @param {bool} active
  * @returns {node}
  */

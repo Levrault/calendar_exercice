@@ -7,12 +7,10 @@ import { post, colorChange, eventFormReset } from './EventForm-actions';
  * @param {object} state
  * @returns {object}
  */
-const mapStateToProps = (state) => {
-  return {
-    success: successSelector(state),
-    errors: errorSelector(state)
-  };
-};
+const mapStateToProps = (state) => ({
+  success: successSelector(state),
+  errors: errorSelector(state)
+});
 
 const mapActionsToProps = {
   onSubmit: post,

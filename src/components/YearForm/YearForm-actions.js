@@ -20,7 +20,7 @@ export const yearFetchAllBegin = () => ({
 
 /**
  * Calendar data has been returned
- * @param {array} months
+ * @param {array} data
  * @returns {object}
  */
 export const yearFetchAllSuccess = data => ({
@@ -73,8 +73,10 @@ export const yearFetchError = error => ({
 });
 
 /**
- *  Get a specefic year with all his data
+ * Get a specefic year with all his data
+ * @async
  * @param {string} id
+ * @returns {function}
  */
 export const fetch = (id) => async (dispatch) => {
   dispatch(yearFetchBegin());
@@ -93,7 +95,9 @@ export const fetch = (id) => async (dispatch) => {
 
 /**
  * Fetch all year ids
+ * @async
  * @param {bool} full
+ * @returns {function}
  */
 export const fetchAll = (full) => async (dispatch) => {
   dispatch(yearFetchAllBegin());

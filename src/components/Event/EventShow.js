@@ -3,6 +3,16 @@ import PropTypes from 'prop-types';
 import EventButton from '../Button/EventButton';
 import styles from './EventShow.css';
 
+/**
+ * Show/delete existing event
+ * @class EventShow
+ * @param {function} onDelete
+ * @param {function} onCancel
+ * @param {string} id
+ * @param {string} color
+ * @param {string} monthId
+ * @param {string} name
+ */
 class EventShow extends Component {
   /**
    * Close form
@@ -12,7 +22,7 @@ class EventShow extends Component {
   }
 
   /**
-   * Delete event
+   * Delete event and hide the form
    */
   handleDelete = () => {
     const { onDelete, id, monthId } = this.props;
@@ -22,6 +32,7 @@ class EventShow extends Component {
 
   /**
   * Render
+  * @returns {node}
   */
   render () {
     const { name, color } = this.props;

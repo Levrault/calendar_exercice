@@ -7,13 +7,15 @@ import {
   errorSelector
 } from '../YearForm/YearForm-reselect';
 
-const mapStateToProps = (state) => {
-  return {
-    year: currentYearSelector(state),
-    months: monthsSelector(state),
-    isLoading: loadingSelector(state),
-    error: errorSelector(state)
-  };
-};
+/**
+ * @param {object} state
+ * @returns {object}
+ */
+const mapStateToProps = (state) => ({
+  year: currentYearSelector(state),
+  months: monthsSelector(state),
+  isLoading: loadingSelector(state),
+  error: errorSelector(state)
+});
 
 export default connect(mapStateToProps)(Calendar);

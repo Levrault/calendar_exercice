@@ -4,8 +4,9 @@ import { NavLink } from 'react-router-dom';
 import styles from './Link.css';
 
 /**
- * Generate default link
+ * Generate Navlink with proper styles
  * @param {object} props
+ * @returns {node}
  */
 const Link = (props) => (
   <NavLink {...props} exact activeClassName={styles.active} />
