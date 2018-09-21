@@ -160,9 +160,4 @@ EventForm.propTypes = {
   errors: PropTypes.object
 };
 
-EventForm.defaultProps = {
-  currentColor: colors[colors.length - 1].code,
-  event: {}
-};
-
 export default EventForm;
