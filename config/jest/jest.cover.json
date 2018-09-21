@@ -8,7 +8,7 @@
     "<rootDir>/node_modules/babel-runtime"
   ],
   "collectCoverage": true,
-  "coverageDirectory": "coverage",
+  "coverageDirectory": "<rootDir>/src/docs/coverage",
   "coverageReporters": ["lcov", "text", "text-summary"],
   "setupFiles": ["<rootDir>/src/tools/test/setup.js"],
   "moduleNameMapper": {
