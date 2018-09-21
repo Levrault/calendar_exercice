@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import EventButton from '../Button/EventButton';
 import ColorInputField from '../Field/ColorInputField';
 import ColorPalette from '../Palette/ColorPalette';
-import colors from '../Palette/colors-constant';
+import { colors, fontColors } from '../Palette/colors-constant';
 import Message from '../Message/Message';
 import styles from './EventForm.css';
 
@@ -28,7 +28,8 @@ class EventForm extends Component {
     this.state = {
       displayColorField: false,
       name: '',
-      color: colors[colors.length - 1].code
+      color: colors[colors.length - 1].code,
+      fontColor: fontColors.dark
     };
   }
 
@@ -50,13 +51,15 @@ class EventForm extends Component {
 
   /**
    * Update color's value
-   * @param {object} event
+   * @param {strign} color
+   * @param {strign} fontColor
+   * @returns {function}
    */
-  onColorChange = (event) => {
-    const value = event.target.value;
-    this.props.onColorChange(value);
+  handleColorChange = (color, fontColor) => () => {
+    this.props.onColorChange(color, fontColor);
     this.setState({
-      color: value
+      color,
+      fontColor
     });
   }
 
@@ -83,11 +86,12 @@ class EventForm extends Component {
    */
   onSubmit = (event) => {
     event.preventDefault();
-    const { name, color } = this.state;
+    const { name, color, fontColor } = this.state;
     const { monthId, day } = this.props;
     this.props.onSubmit({
       name,
       color,
+      fontColor,
       monthId,
       day
     });
@@ -117,13 +121,13 @@ class EventForm extends Component {
             />
           </div>
 
-          <ColorPalette active={displayColorField} onClick={this.onColorChange} value={color} />
+          <ColorPalette active={displayColorField} onClick={this.handleColorChange} value={color} />
 
           {errors &&
-              Object.keys(errors).map(index => {
-                const error = errors[index];
-                return <Message key={error} type="error">{index} {error}</Message>;
-              })
+            Object.keys(errors).map(index => {
+              const error = errors[index];
+              return <Message key={error} type="error">{index} {error}</Message>;
+            })
           }
 
           <div className={styles.buttons}>

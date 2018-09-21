@@ -5,7 +5,7 @@ import styles from './ColorButton.css';
 
 /**
  * Color button
- * @param {bool} active
+ * @param {bool} [active=false]
  * @returns {node}
  */
 const ColorButton = ({ active, ...rest }) => (
@@ -19,6 +19,10 @@ const ColorButton = ({ active, ...rest }) => (
 
 ColorButton.propTypes = {
   active: PropTypes.bool
+};
+
+ColorButton.defaultProps = {
+  active: false
 };
 
 export default ColorButton;

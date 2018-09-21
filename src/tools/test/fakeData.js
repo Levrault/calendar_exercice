@@ -1,7 +1,7 @@
 /**
  * Return a fake data store, use to test container
- * @param  {Object} state
- * @return {Object}
+ * @param  {object} state
+ * @returns {object}
  */
 export default function getFakeData (state) {
   return {
@@ -34,6 +34,7 @@ export default function getFakeData (state) {
                   monthId: '0b54aaf1844478e4',
                   name: 'hello',
                   color: '#EEEEEE',
+                  fontColor: '#212121',
                   day: 8,
                   id: '05af70ab81cc3a40'
                 },
@@ -41,6 +42,7 @@ export default function getFakeData (state) {
                   monthId: '0b54aaf1844478e4',
                   name: 'hello',
                   color: '#546E7A',
+                  fontColor: '#212121',
                   day: 19,
                   id: '8b058e6f439a8985'
                 }
@@ -58,6 +60,7 @@ export default function getFakeData (state) {
                   monthId: '9867bbc8528ec87c',
                   name: 'test',
                   color: '#546E7A',
+                  fontColor: '#212121',
                   day: 5,
                   id: 'c663ab91d37d099e'
                 },
@@ -65,6 +68,7 @@ export default function getFakeData (state) {
                   monthId: '9867bbc8528ec87c',
                   name: 'test',
                   color: '#EEEEEE',
+                  fontColor: '#212121',
                   day: 18,
                   id: '22642e550f57c9b1'
                 }
@@ -295,6 +299,7 @@ export default function getFakeData (state) {
                 monthId: '0b54aaf1844478e4',
                 name: 'hello',
                 color: '#EEEEEE',
+                fontColor: '#212121',
                 day: 8,
                 id: '05af70ab81cc3a40'
               },
@@ -302,6 +307,7 @@ export default function getFakeData (state) {
                 monthId: '0b54aaf1844478e4',
                 name: 'hello',
                 color: '#546E7A',
+                fontColor: '#212121',
                 day: 19,
                 id: '8b058e6f439a8985'
               }
@@ -319,6 +325,7 @@ export default function getFakeData (state) {
                 monthId: '9867bbc8528ec87c',
                 name: 'test',
                 color: '#546E7A',
+                fontColor: '#212121',
                 day: 5,
                 id: 'c663ab91d37d099e'
               },
@@ -326,6 +333,7 @@ export default function getFakeData (state) {
                 monthId: '9867bbc8528ec87c',
                 name: 'test',
                 color: '#EEEEEE',
+                fontColor: '#212121',
                 day: 18,
                 id: '22642e550f57c9b1'
               }
@@ -433,6 +441,7 @@ export default function getFakeData (state) {
           monthId: '0b54aaf1844478e4',
           name: 'hello',
           color: '#EEEEEE',
+          fontColor: '#212121',
           day: 8,
           id: '05af70ab81cc3a40'
         },
@@ -440,6 +449,7 @@ export default function getFakeData (state) {
           monthId: '0b54aaf1844478e4',
           name: 'hello',
           color: '#546E7A',
+          fontColor: '#212121',
           day: 19,
           id: '8b058e6f439a8985'
         }
@@ -449,6 +459,7 @@ export default function getFakeData (state) {
           monthId: '9867bbc8528ec87c',
           name: 'test',
           color: '#546E7A',
+          fontColor: '#212121',
           day: 5,
           id: 'c663ab91d37d099e'
         },
@@ -456,6 +467,7 @@ export default function getFakeData (state) {
           monthId: '9867bbc8528ec87c',
           name: 'test',
           color: '#EEEEEE',
+          fontColor: '#212121',
           day: 18,
           id: '22642e550f57c9b1'
         }

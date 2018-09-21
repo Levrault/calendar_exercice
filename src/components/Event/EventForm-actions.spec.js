@@ -4,7 +4,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from './EventForm-actions';
 import { EVENTS_ADD, EVENTS_DELETE } from '../Event/Events-actions';
-import colors from '../Palette/colors-constant';
+import { colors } from '../Palette/colors-constant';
 
 // axios
 const mockAxios = new MockAdapter(axios);

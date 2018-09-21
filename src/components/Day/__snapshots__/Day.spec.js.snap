@@ -9,13 +9,24 @@ exports[`Day component should render with an event 1`] = `
       }
     }
   >
-    <div>
+    <div
+      style={
+        Object {
+          "color": "#212121",
+        }
+      }
+    >
       hello
     </div>
     <div>
       <button
         className=""
         onClick={[Function]}
+        style={
+          Object {
+            "color": "#212121",
+          }
+        }
         type="button"
       >
         <i
@@ -27,6 +38,11 @@ exports[`Day component should render with an event 1`] = `
       <button
         className=""
         onClick={[Function]}
+        style={
+          Object {
+            "color": "#212121",
+          }
+        }
         type="button"
       >
         <i
@@ -43,6 +59,7 @@ exports[`Day component should render with an event 1`] = `
     style={
       Object {
         "backgroundColor": "#EEEEEE",
+        "color": "#212121",
       }
     }
   >
@@ -280,6 +297,7 @@ exports[`Day component should render with event form 1`] = `
     style={
       Object {
         "backgroundColor": "#EEEEEE",
+        "color": "#212121",
       }
     }
   >

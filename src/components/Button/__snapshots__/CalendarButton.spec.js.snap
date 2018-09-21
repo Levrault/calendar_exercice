@@ -6,6 +6,7 @@ exports[`CalendarButton component should render with active mode on 1`] = `
   style={
     Object {
       "backgroundColor": "#EEEEEE",
+      "color": undefined,
     }
   }
 >

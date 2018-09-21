@@ -12,6 +12,7 @@ const mockEvents = [{
   monthId: '0b54aaf1844478e4',
   name: 'hello',
   color: '#EEEEEE',
+  fontColor: '#212121',
   day: 8,
   id: '05af70ab81cc3a40'
 },
@@ -19,6 +20,7 @@ const mockEvents = [{
   monthId: '0b54aaf1844478e4',
   name: 'hello',
   color: '#546E7A',
+  fontColor: '#212121',
   day: 19,
   id: '8b058e6f439a8985'
 }];
@@ -94,6 +96,7 @@ describe('Month component', () => {
       monthId: '0b54aaf1844478e4',
       name: 'hello',
       color: '#EEEEEE',
+      fontColor: '#212121',
       day: 8,
       id: '05af70ab81cc3a40'
     });
@@ -102,6 +105,7 @@ describe('Month component', () => {
       monthId: '0b54aaf1844478e4',
       name: 'hello',
       color: '#546E7A',
+      fontColor: '#212121',
       day: 19,
       id: '8b058e6f439a8985'
     });

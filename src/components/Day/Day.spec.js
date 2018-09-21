@@ -21,6 +21,7 @@ const mockEvents = {
   monthId: '0b54aaf1844478e4',
   name: 'hello',
   color: '#EEEEEE',
+  fontColor: '#212121',
   day: 8,
   id: '05af70ab81cc3a40'
 };

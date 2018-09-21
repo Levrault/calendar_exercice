@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import { fontColors } from '../Palette/colors-constant';
 import get from 'lodash/get';
 
 /**
@@ -11,6 +12,11 @@ const eventFormSelector = state => get(state, 'eventForm');
 export const colorSelector = createSelector(
   eventFormSelector,
   eventForm => get(eventForm, 'color', '')
+);
+
+export const fontColorSelector = createSelector(
+  eventFormSelector,
+  eventForm => get(eventForm, 'fontColor', fontColors.dark)
 );
 
 export const nameSelector = createSelector(

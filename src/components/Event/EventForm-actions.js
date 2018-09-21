@@ -67,11 +67,15 @@ export const eventFormDeleteError = error => ({
 /**
  * Update color
  * @param {string} color
+ * @param {string} fontColor
  * @returns {object}
  */
-export const colorChange = (color) => ({
+export const colorChange = (color, fontColor) => ({
   type: EVENTFORM_COLOR_CHANGE,
-  payload: { color }
+  payload: {
+    color,
+    fontColor
+  }
 });
 
 /**
@@ -91,11 +95,11 @@ export const eventFormReset = () => ({
 export const post = (params) => async (dispatch) => {
   dispatch(eventFormSubmitBegin());
   try {
-    const response = await axios.post(`${BASE_URL}events`, {
+    const { data } = await axios.post(`${BASE_URL}events`, {
       ...params
     });
-    dispatch(eventFormSubmitSuccess(response.data));
-    dispatch(eventCreated(response.data));
+    dispatch(eventFormSubmitSuccess(data));
+    dispatch(eventCreated(data));
   } catch (error) {
     dispatch(eventFormSubmitError(error));
   }
