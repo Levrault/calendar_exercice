@@ -41,6 +41,15 @@ exports[`About component should render without problem 1`] = `
     How to use
   </h2>
   <p>
+    You will need deployd-cli and mongodb to be installed on your system. Everything is explained on the 
+    <a
+      href="http://deployd.com/"
+      target="_blank"
+    >
+      deployd website
+    </a>
+  </p>
+  <p>
     Yarn start compile project and start deployd
   </p>
   <p>
