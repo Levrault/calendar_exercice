@@ -4,8 +4,8 @@ export const EVENTS_DELETE = 'EVENTS_DELETE';
 export const EVENTS_ADD = 'EVENTS_ADD';
 
 /**
- * Init all current events that already
- * been added to the server
+ * Create a cache of existing events returned
+ * by the server
  * @param {object} data response from server
  * @returns {object}
  */
@@ -27,29 +27,27 @@ export const eventsInit = (data) => {
 };
 
 /**
- * Add new event
+ * Add a new event
  * @param {object} event
+ * @returns {object}
  */
-export const eventCreated = (event) => {
-  return {
-    type: EVENTS_ADD,
-    payload: {
-      event
-    }
-  };
-};
+export const eventCreated = (event) => ({
+  type: EVENTS_ADD,
+  payload: {
+    event
+  }
+});
 
 /**
  * Delete an event
  * @param {string} id
  * @param {string} monthId
+ * @returns {object}
  */
-export const eventDeleted = (id, monthId) => {
-  return {
-    type: EVENTS_DELETE,
-    payload: {
-      id,
-      monthId
-    }
-  };
-};
+export const eventDeleted = (id, monthId) => ({
+  type: EVENTS_DELETE,
+  payload: {
+    id,
+    monthId
+  }
+});

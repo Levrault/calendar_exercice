@@ -7,7 +7,7 @@ const initialState = {
 };
 
 /**
- * Profile from reducer
+ * Day reducer
  * @param {object} state
  * @param {object} action
  * @returns {object}

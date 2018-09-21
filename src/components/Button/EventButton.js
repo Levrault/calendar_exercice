@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './EventButton.css';
 
 /**
- * Primary button
+ * Event button
  * @param {bool} active
  * @param {node} children
  * @returns {node}

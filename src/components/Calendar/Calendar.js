@@ -5,13 +5,28 @@ import Loader from '../Loader/Loader';
 import Error from '../Errors/Error';
 import styles from './Calendar.css';
 
+/**
+ * Calendar layout
+ * @class Calendar
+ * @param {number} year
+ * @param {array} months
+ * @param {bool} [isLoading=true]
+ * @param {object|null} [error]
+ */
 class Calendar extends Component {
+  /**
+   * Update only when news months are receive
+   * @param {object} nextProps
+   * @returns {bool}
+   */
   shouldComponentUpdate (nextProps) {
     return nextProps.months.length > 0 && nextProps.months !== this.props.months;
   }
 
   /**
-  * Render
+  * Render if there's no errors and
+  * when months are not empty
+  * @returns {node}
   */
   render () {
     const { months, isLoading, error, year } = this.props;

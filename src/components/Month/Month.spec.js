@@ -125,4 +125,18 @@ describe('Month component', () => {
     shouldUpdate = component.instance().shouldComponentUpdate({ ...mockJanuary, events: undefined });
     expect(shouldUpdate).toBeFalsy();
   });
+
+  it('should update whend first day index change', () => {
+    const component = shallow(
+      <Month
+        {...mockJanuary}
+      />,
+    );
+
+    let shouldUpdate = component.instance().shouldComponentUpdate({ ...mockJanuary });
+    expect(shouldUpdate).toBeFalsy();
+
+    shouldUpdate = component.instance().shouldComponentUpdate({ ...mockJanuary, firstDayIndex: mockJanuary.firstDayIndex + 1 });
+    expect(shouldUpdate).toBeTruthy();
+  });
 });

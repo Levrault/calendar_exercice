@@ -7,6 +7,8 @@ import styles from './ColorPalette.css';
 
 /**
  * Show color palette, change calender selected date's color
+ * @todo still need to be a pure componenet ?
+ * @class ColorPalette
  * @param {bool} active
  * @param {string} value
  * @param {function} onClick
@@ -14,6 +16,7 @@ import styles from './ColorPalette.css';
 class ColorPalette extends PureComponent {
   /**
   * Render
+  * @returns {node}
   */
   render () {
     const { active, value, onClick } = this.props;

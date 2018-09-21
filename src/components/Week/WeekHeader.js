@@ -5,6 +5,7 @@ import styles from './WeekHeader.css';
  * Mont header that represent
  * every day of a week
  * e.g. S M T W T F S
+ * @returns {node}
  */
 const WeekHeader = () => (
   <ul className={styles.header}>

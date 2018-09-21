@@ -19,7 +19,7 @@ export const eventFormSubmitBegin = () => ({
 });
 
 /**
- * Calendar data has been returned
+ * Calendar data has been return
  * @param {array} current
  * @returns {object}
  */
@@ -36,6 +36,7 @@ export const eventFormSubmitError = error => ({
   type: EVENTFORM_SUBMIT_FAILURE,
   payload: { error }
 });
+
 /**
  * Begin to delete an event
  * @returns {object}
@@ -66,6 +67,7 @@ export const eventFormDeleteError = error => ({
 /**
  * Update color
  * @param {string} color
+ * @returns {object}
  */
 export const colorChange = (color) => ({
   type: EVENTFORM_COLOR_CHANGE,
@@ -81,8 +83,10 @@ export const eventFormReset = () => ({
 });
 
 /**
- *  Get a specefic year with all his data
+ * Create a new event
+ * @async
  * @param {string} params
+ * @returns {function}
  */
 export const post = (params) => async (dispatch) => {
   dispatch(eventFormSubmitBegin());
@@ -98,9 +102,11 @@ export const post = (params) => async (dispatch) => {
 };
 
 /**
- * delete an event
+ * Delete an existing event
+ * @async
  * @param {string} id
  * @param {string} monthId
+ * @returns {function}
  */
 export const deleteEvent = (id, monthId) => async (dispatch) => {
   dispatch(eventFormDeleteBegin());

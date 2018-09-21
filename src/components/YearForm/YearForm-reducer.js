@@ -16,6 +16,12 @@ const initialState = {
   max: 2025
 };
 
+/**
+ * Year form reducer
+ * @param {object} state
+ * @param {object} action
+ * @returns {object}
+ */
 export const yearFormReducer = (state = initialState, action) => {
   switch (action.type) {
   case YEAR_FETCH_ALL_BEGIN:

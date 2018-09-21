@@ -5,6 +5,7 @@ import { daySelectedSelector } from './Day-reselect';
 
 /**
  * @param {object} state
+ * @param {object} ownProps
  * @returns {object}
  */
 const mapStateToProps = (state, ownProps) => {

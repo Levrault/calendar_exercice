@@ -6,6 +6,12 @@ import {
 
 const initialState = {};
 
+/**
+ * Events reducer
+ * @param {object} state
+ * @param {object} action
+ * @returns {object}
+ */
 export const eventsReducer = (state = initialState, action) => {
   switch (action.type) {
   case EVENTS_INIT:
@@ -27,7 +33,7 @@ export const eventsReducer = (state = initialState, action) => {
 
   case EVENTS_DELETE:
     const { id, monthId: monthIdDelete } = action.payload;
-    let prevEvents = state[monthIdDelete];
+    const prevEvents = state[monthIdDelete];
     return {
       ...state,
       [monthIdDelete]: prevEvents.filter(event => event.id !== id)

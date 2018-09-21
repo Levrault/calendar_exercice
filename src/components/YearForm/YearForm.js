@@ -4,9 +4,19 @@ import PropTypes from 'prop-types';
 import styles from './YearForm.css';
 
 /**
- * Create a profile
+ * Get calendar by year
+ * @class YearForm
+ * @param {function} fetchAll
+ * @param {function} fetch
+ * @param {number} min
+ * @param {number} max
+ * @param {any} ids
  */
 class YearForm extends PureComponent {
+  /**
+   * @constructor
+   * @param {object} props
+   */
   constructor (props) {
     super(props);
     this.state = {
@@ -41,7 +51,7 @@ class YearForm extends PureComponent {
 
   /**
    * fetch data
-   * @param {number}
+   * @param {number} value
    */
   fetchData = (value) => {
     const { ids, fetch } = this.props;
@@ -53,6 +63,7 @@ class YearForm extends PureComponent {
 
   /**
    * @param {number} value
+   * @returns {function}
    */
   updateValue = (value) => () => {
     const { min, max } = this.props;
@@ -66,8 +77,8 @@ class YearForm extends PureComponent {
   }
 
   /**
-  * Render
-  */
+   * @returns {node}
+   */
   render () {
     const { min, max, ids } = this.props;
     const { value } = this.state;

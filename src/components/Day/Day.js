@@ -6,7 +6,14 @@ import EventShowConnected from '../Event/EventShowConnected';
 import styles from './Day.css';
 
 /**
- * Show a day
+ * Display/manage interaction of a day
+ * @class Day
+ * @param {string} date
+ * @param {number} value
+ * @param {function} onSelected
+ * @param {bool} isSelected
+ * @param {string} monthId
+ * @param {object} [event]
  */
 class Day extends PureComponent {
   /**
@@ -23,14 +30,11 @@ class Day extends PureComponent {
 
   /**
   * Render
+  * @returns {node}
   */
   render () {
     const { value, isSelected, monthId, event } = this.props;
-
-    let editMode = false;
-    if (event) {
-      editMode = true;
-    }
+    const editMode = !!(event);
 
     return (
       <div className={styles.day}>

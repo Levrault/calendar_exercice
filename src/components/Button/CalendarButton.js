@@ -4,10 +4,11 @@ import classnames from 'classnames';
 import styles from './CalendarButton.css';
 
 /**
- * Primary button
+ * Calendar button
  * @param {bool} active
  * @param {string} color
  * @param {node} children
+ * @param {function} onClick
  * @returns {node}
  */
 const CalendarButton = ({ active, color, children, onClick }) => {
