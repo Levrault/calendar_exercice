@@ -23,6 +23,8 @@ const About = () => (
     </ul>
 
     <h2 className={styles.title}>How to use</h2>
+    <p>You will need deployd-cli and mongodb to be installed on your system.
+      Everything is explained on the <a href="http://deployd.com/" target="_blank">deployd website</a></p>
     <p>Yarn start compile project and start deployd</p>
     <p>Yarn jest will execute all the text</p>
     <p>Yarn storybook will compile stories</p>
