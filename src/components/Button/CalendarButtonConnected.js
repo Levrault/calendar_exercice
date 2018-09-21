@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { colorSelector } from '../Event/EventForm-reselect';
+import { colorSelector, fontColorSelector } from '../Event/EventForm-reselect';
 import CalendarButton from './CalendarButton';
 
 /**
@@ -9,6 +9,7 @@ import CalendarButton from './CalendarButton';
  */
 const mapStateToProps = (state, ownProps) => ({
   color: ownProps.editMode ? ownProps.event.color : colorSelector(state),
+  fontColor: ownProps.editMode ? ownProps.event.fontColor : fontColorSelector(state),
   active: ownProps.active || ownProps.editMode
 });
 

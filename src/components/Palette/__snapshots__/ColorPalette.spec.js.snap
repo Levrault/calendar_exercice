@@ -7,7 +7,6 @@ exports[`ColorPalette component should be hidden when active is false 1`] = `
   <li>
     <button
       className="undefined"
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#FF5252",
@@ -20,7 +19,6 @@ exports[`ColorPalette component should be hidden when active is false 1`] = `
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#FF4081",
@@ -33,7 +31,6 @@ exports[`ColorPalette component should be hidden when active is false 1`] = `
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#E040FB",
@@ -46,7 +43,6 @@ exports[`ColorPalette component should be hidden when active is false 1`] = `
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#FF6E40",
@@ -59,7 +55,6 @@ exports[`ColorPalette component should be hidden when active is false 1`] = `
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#448AFF",
@@ -72,7 +67,6 @@ exports[`ColorPalette component should be hidden when active is false 1`] = `
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#64FFDA",
@@ -85,7 +79,6 @@ exports[`ColorPalette component should be hidden when active is false 1`] = `
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#B2FF59",
@@ -98,7 +91,6 @@ exports[`ColorPalette component should be hidden when active is false 1`] = `
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#CDDC39",
@@ -111,7 +103,6 @@ exports[`ColorPalette component should be hidden when active is false 1`] = `
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#795548",
@@ -124,7 +115,6 @@ exports[`ColorPalette component should be hidden when active is false 1`] = `
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#546E7A",
@@ -137,7 +127,6 @@ exports[`ColorPalette component should be hidden when active is false 1`] = `
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#0097A7",
@@ -150,7 +139,6 @@ exports[`ColorPalette component should be hidden when active is false 1`] = `
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#EEEEEE",
@@ -170,7 +158,6 @@ exports[`ColorPalette component should render correctly when active is true 1`] 
   <li>
     <button
       className="undefined"
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#FF5252",
@@ -183,7 +170,6 @@ exports[`ColorPalette component should render correctly when active is true 1`] 
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#FF4081",
@@ -196,7 +182,6 @@ exports[`ColorPalette component should render correctly when active is true 1`] 
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#E040FB",
@@ -209,7 +194,6 @@ exports[`ColorPalette component should render correctly when active is true 1`] 
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#FF6E40",
@@ -222,7 +206,6 @@ exports[`ColorPalette component should render correctly when active is true 1`] 
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#448AFF",
@@ -235,7 +218,6 @@ exports[`ColorPalette component should render correctly when active is true 1`] 
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#64FFDA",
@@ -248,7 +230,6 @@ exports[`ColorPalette component should render correctly when active is true 1`] 
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#B2FF59",
@@ -261,7 +242,6 @@ exports[`ColorPalette component should render correctly when active is true 1`] 
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#CDDC39",
@@ -274,7 +254,6 @@ exports[`ColorPalette component should render correctly when active is true 1`] 
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#795548",
@@ -287,7 +266,6 @@ exports[`ColorPalette component should render correctly when active is true 1`] 
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#546E7A",
@@ -300,7 +278,6 @@ exports[`ColorPalette component should render correctly when active is true 1`] 
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#0097A7",
@@ -313,7 +290,6 @@ exports[`ColorPalette component should render correctly when active is true 1`] 
   <li>
     <button
       className=""
-      onClick={[Function]}
       style={
         Object {
           "backgroundColor": "#EEEEEE",

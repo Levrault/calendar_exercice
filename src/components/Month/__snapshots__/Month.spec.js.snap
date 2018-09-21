@@ -117,6 +117,7 @@ exports[`Month component should render with events 1`] = `
             style={
               Object {
                 "backgroundColor": "#EEEEEE",
+                "color": "#212121",
               }
             }
           >
@@ -244,6 +245,7 @@ exports[`Month component should render with events 1`] = `
             style={
               Object {
                 "backgroundColor": "#546E7A",
+                "color": "#212121",
               }
             }
           >

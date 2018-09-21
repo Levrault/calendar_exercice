@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { mount } from '../../tools/test/enzyme';
 import ColorPalette from './ColorPalette';
 import ColorButton from '../Button/ColorButton';
-import colors from './colors-constant';
+import { colors } from './colors-constant';
 
 describe('ColorPalette component', () => {
   it('should be hidden when active is false', () => {

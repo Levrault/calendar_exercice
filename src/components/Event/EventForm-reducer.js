@@ -1,4 +1,4 @@
-import colors from '../Palette/colors-constant';
+import { colors, fontColors } from '../Palette/colors-constant';
 
 import {
   EVENTFORM_SUBMIT_BEGIN,
@@ -13,6 +13,7 @@ const initialState = {
   loading: false,
   error: null,
   color: colors[colors.length - 1].code,
+  font: fontColors.dark,
   name: '',
   monthId: '',
   day: 0
@@ -52,7 +53,7 @@ export const eventFormReducer = (state = initialState, action) => {
   case EVENTFORM_COLOR_CHANGE:
     return {
       ...state,
-      color: action.payload.color
+      ...action.payload
     };
 
   case EVENTFORM_RESET:

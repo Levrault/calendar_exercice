@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from '../../tools/test/enzyme';
-import colors from '../Palette/colors-constant';
+import { colors, fontColors } from '../Palette/colors-constant';
 import EventForm from './EventForm';
 
 const mock = {
@@ -56,7 +56,8 @@ describe('EventForm component', () => {
     );
 
     expect(component.instance().state.color).toEqual(colors[colors.length - 1].code);
-    component.instance().onColorChange({ target: { value: colors[0].code } });
+    component.instance().handleColorChange(colors[0].code, fontColors.dark)();
+    component.update();
     expect(component.instance().state.color).toEqual(colors[0].code);
   });
 

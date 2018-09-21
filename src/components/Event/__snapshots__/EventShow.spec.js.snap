@@ -8,13 +8,24 @@ exports[`EventShow component should render without problem 1`] = `
     }
   }
 >
-  <div>
+  <div
+    style={
+      Object {
+        "color": "#212121",
+      }
+    }
+  >
     hello
   </div>
   <div>
     <button
       className=""
       onClick={[Function]}
+      style={
+        Object {
+          "color": "#212121",
+        }
+      }
       type="button"
     >
       <i
@@ -26,6 +37,11 @@ exports[`EventShow component should render without problem 1`] = `
     <button
       className=""
       onClick={[Function]}
+      style={
+        Object {
+          "color": "#212121",
+        }
+      }
       type="button"
     >
       <i

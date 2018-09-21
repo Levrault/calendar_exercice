@@ -10,6 +10,7 @@ import styles from './EventShow.css';
  * @param {function} onCancel
  * @param {string} id
  * @param {string} color
+ * @param {string} fontColor
  * @param {string} monthId
  * @param {string} name
  */
@@ -35,20 +36,23 @@ class EventShow extends Component {
   * @returns {node}
   */
   render () {
-    const { name, color } = this.props;
+    const { name, color, fontColor } = this.props;
+    const fontStyle = {
+      color: fontColor
+    };
 
     return (
       <div className={styles.container} style={{ backgroundColor: color }}>
-        <div className={styles.title}>
+        <div className={styles.title} style={fontStyle}>
           {name}
         </div>
 
         <div className={styles.buttons}>
-          <EventButton type="button" onClick={this.handleCloseClick}>
+          <EventButton style={fontStyle} type="button" onClick={this.handleCloseClick}>
             <i className="material-icons">clear</i>
           </EventButton>
 
-          <EventButton type="button" onClick={this.handleDelete}>
+          <EventButton style={fontStyle} type="button" onClick={this.handleDelete}>
             <i className="material-icons">delete</i>
           </EventButton>
         </div>
@@ -62,6 +66,7 @@ EventShow.propTypes = {
   onCancel: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
+  fontColor: PropTypes.string.isRequired,
   monthId: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired
 };

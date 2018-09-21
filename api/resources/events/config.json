@@ -25,13 +25,21 @@
 			"id": "color",
 			"order": 2
 		},
+		"fontColor": {
+			"name": "fontColor",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fontColor",
+			"order": 3
+		},
 		"day": {
 			"name": "day",
 			"type": "number",
 			"typeLabel": "number",
 			"required": false,
 			"id": "day",
-			"order": 3
+			"order": 4
 		}
 	}
 }

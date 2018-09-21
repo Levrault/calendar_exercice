@@ -4,7 +4,7 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs/react';
 import { withMarkdownNotes } from '@storybook/addon-notes';
 import SizedWrapper from '../../tools/storybook/SizedWrapper';
 import ColorPalette from './ColorPalette';
-import colors from './colors-constant';
+import { colors } from './colors-constant';
 
 storiesOf('ColorPalette', module)
   .addDecorator(withKnobs)

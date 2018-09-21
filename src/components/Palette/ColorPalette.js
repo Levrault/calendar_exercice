@@ -2,12 +2,11 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ColorButton from '../Button/ColorButton';
-import colors from './colors-constant';
+import { colors } from './colors-constant';
 import styles from './ColorPalette.css';
 
 /**
  * Show color palette, change calender selected date's color
- * @todo still need to be a pure componenet ?
  * @class ColorPalette
  * @param {bool} active
  * @param {string} value
@@ -26,12 +25,12 @@ class ColorPalette extends PureComponent {
     return (
       <ul className={containerClassName}>
         {
-          colors.map(({ code, name }) => (
+          colors.map(({ code, font, name }) => (
             <li key={name} className={styles.color} >
               <ColorButton
                 value={code}
                 active={code === value}
-                onClick={onClick}
+                onClick={onClick(code, font)}
               />
             </li>
           ))

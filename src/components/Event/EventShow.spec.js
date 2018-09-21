@@ -9,6 +9,7 @@ const mock = {
   monthId: '0b54aaf1844478e4',
   name: 'hello',
   color: '#546E7A',
+  fontColor: '#212121',
   day: 19,
   id: '8b058e6f439a8985'
 };

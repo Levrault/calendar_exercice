@@ -119,6 +119,7 @@ exports[`MonthConnected component should render without problem 1`] = `
             style={
               Object {
                 "backgroundColor": "#EEEEEE",
+                "color": "#212121",
               }
             }
           >
@@ -246,6 +247,7 @@ exports[`MonthConnected component should render without problem 1`] = `
             style={
               Object {
                 "backgroundColor": "#546E7A",
+                "color": "#212121",
               }
             }
           >

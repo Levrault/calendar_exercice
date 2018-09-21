@@ -15,7 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 /**
  * Mainframe app
- * @param {Node} Component
+ * @param {node} Component
  */
 const render = (Component) => {
   ReactDOM.render(
