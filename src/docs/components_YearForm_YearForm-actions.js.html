@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/YearForm/YearForm-actions.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/YearForm/YearForm-actions.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import axios from 'axios';
+import minBy from 'lodash/minBy';
+import maxBy from 'lodash/maxBy';
+import { eventsInit } from '../Event/Events-actions';
+
+export const YEAR_FETCH_BEGIN = 'CALENDAR_FETCH_BEGIN';
+export const YEAR_FETCH_SUCCESS = 'CALENDAR_FETCH_SUCCESS';
+export const YEAR_FETCH_FAILURE = 'CALENDAR_FETCH_FAILURE';
+export const YEAR_FETCH_ALL_BEGIN = 'CALENDAR_FETCH_ALL_BEGIN';
+export const YEAR_FETCH_ALL_SUCCESS = 'CALENDAR_FETCH_ALL_SUCCESS';
+export const YEAR_FETCH_ALL_FAILURE = 'CALENDAR_FETCH_ALL_FAILURE';
+
+/**
+ * Begin to fetch data
+ * @returns {object}
+ */
+export const yearFetchAllBegin = () => ({
+  type: YEAR_FETCH_ALL_BEGIN
+});
+
+/**
+ * Calendar data has been returned
+ * @param {array} data
+ * @returns {object}
+ */
+export const yearFetchAllSuccess = data => ({
+  type: YEAR_FETCH_ALL_SUCCESS,
+  payload: {
+    data,
+    min: minBy(data, 'year').year,
+    max: maxBy(data, 'year').year
+  }
+});
+
+/**
+ * Receive an error
+ * @param {object} error
+ * @returns {object}
+ */
+export const yearFetchAllError = error => ({
+  type: YEAR_FETCH_ALL_FAILURE,
+  payload: { error }
+});
+
+/**
+ * Begin to fetch data
+ * @returns {object}
+ */
+export const yearFetchBegin = () => ({
+  type: YEAR_FETCH_BEGIN
+});
+
+/**
+ * Calendar data has been returned
+ * @param {array} current
+ * @returns {object}
+ */
+export const yearFetchSuccess = current => ({
+  type: YEAR_FETCH_SUCCESS,
+  payload: {
+    current
+  }
+});
+
+/**
+ * Receive an error
+ * @param {object} error
+ * @returns {object}
+ */
+export const yearFetchError = error => ({
+  type: YEAR_FETCH_FAILURE,
+  payload: { error }
+});
+
+/**
+ * Get a specefic year with all his data
+ * @async
+ * @param {string} id
+ * @returns {function}
+ */
+export const fetch = (id) => async (dispatch) => {
+  dispatch(yearFetchBegin());
+  try {
+    const { data } = await axios.get(`${BASE_URL}calendar/${id}`, {
+      params: {
+        full: true
+      }
+    });
+    dispatch(yearFetchSuccess(data));
+    dispatch(eventsInit(data));
+  } catch (error) {
+    dispatch(yearFetchError(error));
+  }
+};
+
+/**
+ * Fetch all year ids
+ * @async
+ * @param {bool} full
+ * @returns {function}
+ */
+export const fetchAll = (full) => async (dispatch) => {
+  dispatch(yearFetchAllBegin());
+  try {
+    const { data } = await axios.get(`${BASE_URL}calendar`, {
+      params: {
+        full
+      }
+    });
+    dispatch(yearFetchAllSuccess(data));
+  } catch (error) {
+    dispatch(yearFetchAllError(error));
+  }
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="Calendar.html">Calendar</a></li><li><a href="ColorPalette.html">ColorPalette</a></li><li><a href="Day.html">Day</a></li><li><a href="EventForm.html">EventForm</a></li><li><a href="EventShow.html">EventShow</a></li><li><a href="Month.html">Month</a></li><li><a href="YearForm.html">YearForm</a></li></ul><h3>Global</h3><ul><li><a href="global.html#About">About</a></li><li><a href="global.html#CalendarButton">CalendarButton</a></li><li><a href="global.html#checkValidServiceWorker">checkValidServiceWorker</a></li><li><a href="global.html#ColorButton">ColorButton</a></li><li><a href="global.html#colorChange">colorChange</a></li><li><a href="global.html#ColorInputField">ColorInputField</a></li><li><a href="global.html#dayReducer">dayReducer</a></li><li><a href="global.html#daySelector">daySelector</a></li><li><a href="global.html#deleteEvent">deleteEvent</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#EventButton">EventButton</a></li><li><a href="global.html#eventCreated">eventCreated</a></li><li><a href="global.html#eventDeleted">eventDeleted</a></li><li><a href="global.html#eventFormDeleteBegin">eventFormDeleteBegin</a></li><li><a href="global.html#eventFormDeleteError">eventFormDeleteError</a></li><li><a href="global.html#eventFormDeleteSuccess">eventFormDeleteSuccess</a></li><li><a href="global.html#eventFormReducer">eventFormReducer</a></li><li><a href="global.html#eventFormReset">eventFormReset</a></li><li><a href="global.html#eventFormSelector">eventFormSelector</a></li><li><a href="global.html#eventFormSubmitBegin">eventFormSubmitBegin</a></li><li><a href="global.html#eventFormSubmitError">eventFormSubmitError</a></li><li><a href="global.html#eventFormSubmitSuccess">eventFormSubmitSuccess</a></li><li><a href="global.html#eventsInit">eventsInit</a></li><li><a href="global.html#eventsReducer">eventsReducer</a></li><li><a href="global.html#eventsSelector">eventsSelector</a></li><li><a href="global.html#fetch">fetch</a></li><li><a href="global.html#fetchAll">fetchAll</a></li><li><a href="global.html#Link">Link</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#Main">Main</a></li><li><a href="global.html#mapStateToProps">mapStateToProps</a></li><li><a href="global.html#Message">Message</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#NavbarRouter">NavbarRouter</a></li><li><a href="global.html#onSelected">onSelected</a></li><li><a href="global.html#PageNotFound">PageNotFound</a></li><li><a href="global.html#post">post</a></li><li><a href="global.html#registerValidSW">registerValidSW</a></li><li><a href="global.html#render">render</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#unregister">unregister</a></li><li><a href="global.html#WeekHeader">WeekHeader</a></li><li><a href="global.html#yearFetchAllBegin">yearFetchAllBegin</a></li><li><a href="global.html#yearFetchAllError">yearFetchAllError</a></li><li><a href="global.html#yearFetchAllSuccess">yearFetchAllSuccess</a></li><li><a href="global.html#yearFetchBegin">yearFetchBegin</a></li><li><a href="global.html#yearFetchError">yearFetchError</a></li><li><a href="global.html#yearFetchSuccess">yearFetchSuccess</a></li><li><a href="global.html#yearFormReducer">yearFormReducer</a></li><li><a href="global.html#yearSelector">yearSelector</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Sep 21 2018 15:33:43 GMT+0200 (CEST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
