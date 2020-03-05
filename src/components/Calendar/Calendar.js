@@ -8,7 +8,6 @@ import styles from './Calendar.css';
 /**
  * Calendar layout
  * @class Calendar
- * @param {number} year
  * @param {array} months
  * @param {bool} [isLoading=true]
  * @param {object|null} [error]
@@ -29,7 +28,7 @@ class Calendar extends Component {
   * @returns {node}
   */
   render () {
-    const { months, isLoading, error, year } = this.props;
+    const { months, isLoading, error } = this.props;
 
     if (error !== null) {
       return <Error {...error} />;
@@ -41,11 +40,11 @@ class Calendar extends Component {
 
     return (
       <div className={styles.container}>
-        <h1 className={styles.title}>Calendar {year}</h1>
+        <h1 className={styles.title}>Calendar</h1>
         <div className={styles.content}>
           {
             months.map(month => (
-              <MonthConnected key={month.name} {...month} year={year} />
+              <MonthConnected key={month.name} {...month} year={2018} />
             ))
           }
           {isLoading &&
@@ -58,7 +57,6 @@ class Calendar extends Component {
 }
 
 Calendar.propTypes = {
-  year: PropTypes.number.isRequired,
   months: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     numberOfDays: PropTypes.number.isRequired,
@@ -70,7 +68,6 @@ Calendar.propTypes = {
 };
 
 Calendar.defaultProps = {
-  year: 2018,
   months: [],
   isLoading: true
 };

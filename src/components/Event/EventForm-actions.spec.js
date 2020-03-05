@@ -1,13 +1,8 @@
-import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from './EventForm-actions';
 import { EVENTS_ADD, EVENTS_DELETE } from '../Event/Events-actions';
 import { colors } from '../Palette/colors-constant';
-
-// axios
-const mockAxios = new MockAdapter(axios);
 
 // mock store
 const middlewares = [thunk];
@@ -19,13 +14,12 @@ const event = {
   name: 'hello',
   color: '#EEEEEE',
   day: 8,
-  id: '05af70ab81cc3a40'
+  id: '0b54aaf1844478e4-8'
 };
 
 
 describe('EventForm actions', () => {
   beforeEach(() => {
-    mockAxios.reset();
     store.clearActions();
   });
 
@@ -133,20 +127,11 @@ describe('EventForm actions', () => {
       { type: EVENTS_ADD, payload: { event } }
     ];
 
-    mockAxios.onPost(`${BASE_URL}events`).reply(200, event);
-
-    await store.dispatch(actions.post({
-      name: event.name,
-      color: event.color,
-      monthId: event.monthId,
-      day: event.day
-    }));
+    await store.dispatch(actions.post(event));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
   it('should manage error when it fail to create event', async () => {
-    mockAxios.onPost(`${BASE_URL}events`).reply(400);
-
     try {
       await store.dispatch(actions.post(event.id, event.monthId));
     } catch (e) {
@@ -169,15 +154,11 @@ describe('EventForm actions', () => {
       { type: EVENTS_DELETE, payload: { id: event.id, monthId: event.monthId } }
     ];
 
-    mockAxios.onDelete(`${BASE_URL}events/${event.id}`).reply(200);
-
     await store.dispatch(actions.deleteEvent(event.id, event.monthId));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
   it('should manage error when it fail to delete an event', async () => {
-    mockAxios.onDelete(`${BASE_URL}events/${event.id}`).reply(400);
-
     try {
       await store.dispatch(actions.deleteEvent(event.id, event.monthId));
     } catch (e) {

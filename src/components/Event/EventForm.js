@@ -89,6 +89,7 @@ class EventForm extends Component {
     const { name, color, fontColor } = this.state;
     const { monthId, day } = this.props;
     this.props.onSubmit({
+      id: `${monthId}-${day}`,
       name,
       color,
       fontColor,

@@ -12,7 +12,17 @@ class App extends Component {
   render () {
     return (
       <div className={styles.container}>
-        <CalendarConnected />
+        <CalendarConnected months={[
+          {
+            name: 'January',
+            chronology: 1,
+            numberOfDays: 31,
+            firstDayIndex: 1,
+            calendarId: '576c020e2bfc5849',
+            id: 'a4e8a03dbe54ca7d',
+            events: []
+          }]
+        } />
       </div>
     );
   }

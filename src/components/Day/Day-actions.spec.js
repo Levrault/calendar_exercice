@@ -1,11 +1,6 @@
-import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from './Day-actions';
-
-// axios
-const mockAxios = new MockAdapter(axios);
 
 // mock store
 const middlewares = [thunk];
@@ -14,7 +9,6 @@ const store = mockStore();
 
 describe('Day actions', () => {
   beforeEach(() => {
-    mockAxios.reset();
     store.clearActions();
   });
 

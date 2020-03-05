@@ -1,5 +1,4 @@
-// import axios from 'axios';
-import { eventDeleted } from './Events-actions';
+import { eventCreated, eventDeleted } from './Events-actions';
 
 export const EVENTFORM_SUBMIT_BEGIN = 'EVENTFORM_SUBMIT_BEGIN';
 export const EVENTFORM_SUBMIT_SUCCESS = 'EVENTFORM_SUBMIT_SUCCESS';
@@ -95,12 +94,8 @@ export const eventFormReset = () => ({
 export const post = (params) => async (dispatch) => {
   dispatch(eventFormSubmitBegin());
   try {
-    console.log('post event'); //TODO: to remove
-    // const { data } = await axios.post(`${BASE_URL}events`, {
-    //   ...params
-    // });
-    // dispatch(eventFormSubmitSuccess(data));
-    // dispatch(eventCreated(data));
+    dispatch(eventFormSubmitSuccess(params));
+    dispatch(eventCreated(params));
   } catch (error) {
     dispatch(eventFormSubmitError(error));
   }
