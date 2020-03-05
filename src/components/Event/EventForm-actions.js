@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { eventCreated, eventDeleted } from './Events-actions';
+// import axios from 'axios';
+import { eventDeleted } from './Events-actions';
 
 export const EVENTFORM_SUBMIT_BEGIN = 'EVENTFORM_SUBMIT_BEGIN';
 export const EVENTFORM_SUBMIT_SUCCESS = 'EVENTFORM_SUBMIT_SUCCESS';
@@ -95,11 +95,12 @@ export const eventFormReset = () => ({
 export const post = (params) => async (dispatch) => {
   dispatch(eventFormSubmitBegin());
   try {
-    const { data } = await axios.post(`${BASE_URL}events`, {
-      ...params
-    });
-    dispatch(eventFormSubmitSuccess(data));
-    dispatch(eventCreated(data));
+    console.log('post event'); //TODO: to remove
+    // const { data } = await axios.post(`${BASE_URL}events`, {
+    //   ...params
+    // });
+    // dispatch(eventFormSubmitSuccess(data));
+    // dispatch(eventCreated(data));
   } catch (error) {
     dispatch(eventFormSubmitError(error));
   }
@@ -115,7 +116,7 @@ export const post = (params) => async (dispatch) => {
 export const deleteEvent = (id, monthId) => async (dispatch) => {
   dispatch(eventFormDeleteBegin());
   try {
-    await axios.delete(`${BASE_URL}events/${id}`);
+    // await axios.delete(`${BASE_URL}events/${id}`);
     dispatch(eventFormDeleteSuccess());
     dispatch(eventDeleted(id, monthId));
   } catch (error) {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../Navbar/Navbar';
-import Router from '../Router/Router';
+import CalendarConnected from '../Calendar/CalendarConnected';
 import styles from './App.css';
 
 /**
@@ -13,8 +12,7 @@ class App extends Component {
   render () {
     return (
       <div className={styles.container}>
-        <Navbar />
-        <Router />
+        <CalendarConnected />
       </div>
     );
   }

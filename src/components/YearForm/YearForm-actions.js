@@ -1,7 +1,6 @@
-import axios from 'axios';
 import minBy from 'lodash/minBy';
 import maxBy from 'lodash/maxBy';
-import { eventsInit } from '../Event/Events-actions';
+// import { eventsInit } from '../Event/Events-actions';
 
 export const YEAR_FETCH_BEGIN = 'CALENDAR_FETCH_BEGIN';
 export const YEAR_FETCH_SUCCESS = 'CALENDAR_FETCH_SUCCESS';
@@ -81,13 +80,13 @@ export const yearFetchError = error => ({
 export const fetch = (id) => async (dispatch) => {
   dispatch(yearFetchBegin());
   try {
-    const { data } = await axios.get(`${BASE_URL}calendar/${id}`, {
-      params: {
-        full: true
-      }
-    });
-    dispatch(yearFetchSuccess(data));
-    dispatch(eventsInit(data));
+    // const { data } = await axios.get(`${BASE_URL}calendar/${id}`, {
+    //   params: {
+    //     full: true
+    //   }
+    // });
+    // dispatch(yearFetchSuccess(data));
+    // dispatch(eventsInit(data));
   } catch (error) {
     dispatch(yearFetchError(error));
   }
@@ -102,12 +101,12 @@ export const fetch = (id) => async (dispatch) => {
 export const fetchAll = (full) => async (dispatch) => {
   dispatch(yearFetchAllBegin());
   try {
-    const { data } = await axios.get(`${BASE_URL}calendar`, {
-      params: {
-        full
-      }
-    });
-    dispatch(yearFetchAllSuccess(data));
+    // const { data } = await axios.get(`${BASE_URL}calendar`, {
+    //   params: {
+    //     full
+    //   }
+    // });
+    // dispatch(yearFetchAllSuccess(data));
   } catch (error) {
     dispatch(yearFetchAllError(error));
   }
